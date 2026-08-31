@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ca" style>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ALPIKA - Cultivant el Futur de les Muntanyes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config" src="./js/tailwind.config.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-cream text-black-text font-body bg-noise antialiased relative min-h-screen">
+    <!-- Organic Gradient Background -->
+    <div class="fixed inset-0 z-[-2] bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
+    <div class="fixed inset-0 z-[-1] topo-pattern opacity-60"></div>
+    <!-- TopAppBar -->
+    <header
+        class="topbar fixed top-4 left-4 right-4 rounded-full shadow-sm flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto z-50">
+        <div class="flex items-center gap-2">
+            <!-- <span class="material-symbols-outlined text-primary-orange" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">landscape</span> -->
+            <img src="./img/logo.svg" alt="Alpika Logo" class="">
+            <!-- <span class="font-display uppercase text-3xl tracking-wide text-black-text">Aran de terra</span> -->
+        </div>
+        <nav class="hidden md:flex gap-8">
+            <a class="nav-link text-primary-orange font-semibold border-b-2 border-primary-orange pb-1 text-sm uppercase tracking-widest"
+                href="#">HOME</a>
+            <a class="nav-link text-dark-brown font-medium hover:bg-white/50 hover:scale-105 transition-all duration-300 px-3 py-1 rounded-full text-sm uppercase tracking-widest"
+                href="#">PROJECTES</a>
+            <a class="nav-link text-dark-brown font-medium hover:bg-white/50 hover:scale-105 transition-all duration-300 px-3 py-1 rounded-full text-sm uppercase tracking-widest"
+                href="#">MÈTODE</a>
+        </nav>
+        <button
+            class="bg-primary-orange hover:bg-terracotta text-white rounded-full px-6 py-2 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
+            Contact
+        </button>
+    </header>
+    <main class="mx-auto relative">
+        <!-- Hero Section -->
+        <section
+            class="stacked stacked-1 flex flex-col items-center justify-center text-center relative px-margin-mobile md:px-margin-desktop">
+            <!-- Floating Decorative Elements -->
+            <div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
+                <!-- Node 1 -->
+                <div class="absolute top-10 left-10 md:left-32 w-16 h-16 rounded-3xl glass-float flex items-center justify-center animate-[bounce_5s_infinite_alternate]"
+                    style="box-shadow: 0 0 30px rgba(78, 36, 36, 0.3);">
+                    <span class="material-symbols-outlined text-[#FDBE2C]">eco</span>
+                </div>
+                <!-- Node 2 -->
+                <div class="absolute top-1/4 right-5 md:right-24 w-12 h-12 rounded-xl glass-float flex items-center justify-center animate-[bounce_4s_infinite_alternate_reverse]"
+                    style="box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);">
+                    <span class="material-symbols-outlined text-[#FDBE2C]">agriculture</span>
+                </div>
+                <!-- Node 3 -->
+                <div class="absolute bottom-1/4 left-5 md:left-20 w-14 h-14 rounded-2xl glass-float flex items-center justify-center animate-[bounce_6s_infinite_alternate]"
+                    style="box-shadow: 0 0 30px rgba(190, 82, 37, 0.3);">
+                    <span class="material-symbols-outlined text-[#FDBE2C]">terrain</span>
+                </div>
+                <!-- Node 4 -->
+                <div class="absolute bottom-10 right-10 md:right-40 w-16 h-16 rounded-3xl glass-float flex items-center justify-center animate-[bounce_5.5s_infinite_alternate_reverse]"
+                    style="box-shadow: 0 0 30px rgba(242, 109, 51, 0.2);">
+                    <span class="material-symbols-outlined text-[#FDBE2C]">water_drop</span>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="glass-panel px-4 py-2 rounded-full mb-8 inline-flex items-center gap-2 shadow-sm">
+                <span class="text-lg">⛰️</span>
+                <span class="text-xs font-semibold text-dark-brown tracking-widest uppercase">INFOGRAFIES
+                    DE MUNTANYA</span>
+            </div>
+            <h1
+                class="font-display uppercase text-5xl md:text-7xl text-black-text mb-6 max-w-4xl mx-auto drop-shadow-sm leading-tight">
+                Construïm sistemes justos i arrelats&nbsp;</h1>
+            <p class="text-lg md:text-xl text-dark-brown max-w-2xl mx-auto mb-12 font-light">
+                Dades visuals i anàlisi sobre agricultura d'alta muntanya.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button
+                    class="bg-primary-orange text-white rounded-full pl-2 pr-6 py-2 text-sm font-semibold uppercase tracking-widest flex items-center gap-3 hover:scale-105 transition-transform shadow-lg glow-hover">
+                    <span class="bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-sm">explore</span>
+                    </span>
+                    Explora Projectes
+                </button>
+                <button
+                    class="border-2 border-dark-brown/30 text-dark-brown rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-widest flex items-center gap-2 hover:bg-dark-brown/10 hover:border-dark-brown/50 transition-all">
+                    Mètode Alpika
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+        <!-- Dades i coneixement del Territori Section -->
+        <section
+            class="stacked stacked-2 py-4 px-margin-mobile md:px-margin-desktop bg-[#4B4238] rounded-t-[40px] relative overflow-hidden w-full flex flex-col justify-center">
+            <div class="max-w-container-max mx-auto relative z-10 w-full">
+                <div class="mb-4">
+                    <h2 class="font-display text-4xl md:text-7xl font-bold uppercase leading-tight">
+                        <span class="text-white block">DADES I CONEIXEMENT DEL</span>
+                        <span class="text-primary-orange">TERRITORI</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mb-4">
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#221F1F] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[#FDBE2C] text-3xl font-light">monitoring</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-body font-semibold text-xl mb-1">Dades de collita en temps real
+                            </h3>
+                            <p class="text-[#928070] font-body text-base leading-relaxed">Monitorització constant dels
+                                paràmetres de producció a les parcel·les d'alta muntanya.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#221F1F] flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-[#FDBE2C] text-3xl font-light">calendar_today</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-body font-semibold text-xl mb-1">Cicles de cultiu explicats</h3>
+                            <p class="text-[#928070] font-body text-base leading-relaxed">Visualització detallada de les
+                                etapes de creixement adaptades al clima alpí.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#221F1F] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[#FDBE2C] text-3xl font-light">thermostat</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-body font-semibold text-xl mb-1">Impacte climàtic a la muntanya
+                            </h3>
+                            <p class="text-[#928070] font-body text-base leading-relaxed">Anàlisi de com les variacions
+                                tèrmiques afecten la biodiversitat i el rendiment.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#221F1F] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[#FDBE2C] text-3xl font-light">update</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-body font-semibold text-xl mb-1">Actualització constant de dades
+                            </h3>
+                            <p class="text-[#928070] font-body text-base leading-relaxed">Flux d'informació continu per a
+                                una gestió agrícola precisa i sostenible.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <button
+                        class="border-2 border-white/20 text-white rounded-full px-6 py-2 text-sm font-semibold uppercase tracking-widest flex items-center gap-4 hover:bg-white/5 transition-all">
+                        Veure més dades
+                        <span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </button>
+                    <div class="flex gap-3">
+                        <div class="w-4 h-1 rounded-full bg-primary-orange"></div>
+                        <div class="w-4 h-1 rounded-full bg-[#928070]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projectes i solucions Section -->
+        <section
+            class="stacked stacked-3 px-margin-mobile md:px-margin-desktop py-6 rounded-t-[3rem] bg-[#221F1F] w-full flex flex-col justify-center">
+            <div class="max-w-container-max mx-auto w-full">
+                <!-- Header -->
+                <div class="mb-4">
+                    <h2 class="font-display text-4xl md:text-7xl uppercase leading-[1.1]">
+                        <span class="text-white block">Projectes i solucions
+                            que</span>
+                        <span
+                            class="bg-gradient-to-r bg-clip-text text-transparent block from-primary-orange to-terracotta">hem
+                            impulsat</span>
+                    </h2>
+                </div>
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Project 1 -->
+                    <div class="group">
+                        <div
+                            class="aspect-[16/10] rounded-3xl bg-[#4A3B32] mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                            <h3 class="font-display text-3xl text-white uppercase text-center px-4">Vall de Vinaixa</h3>
+                        </div>
+                        <p class="text-white font-body font-light text-base">Pantalla interactiva per exposició a Vall de Vinaixa
+                        </p>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="group">
+                        <div
+                            class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                            <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Ecosistemes</h3>
+                        </div>
+                        <p class="text-white font-body font-light text-base">Anàlisi de biodiversitat en zones de pastura</p>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="group">
+                        <div
+                            class="aspect-[16/10] rounded-3xl bg-white mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                            <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Aigua Viva
+                            </h3>
+                        </div>
+                        <p class="text-white font-body font-light text-base">Gestió eficient dels recursos hídrics</p>
+                    </div>
+                    <!-- Project 4 -->
+                    <!-- Project 5 -->
+                    <!-- Project 6 -->
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <button
+                        class="border-2 border-white/20 text-white rounded-full px-6 py-2 text-sm font-semibold uppercase tracking-widest flex items-center gap-4 hover:bg-white/5 transition-all">
+                        Veure més Projectes
+                        <span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </span>
+                    </button>
+                    <div class="flex gap-3">
+                        <div class="w-4 h-1 rounded-full bg-primary-orange"></div>
+                        <div class="w-4 h-1 rounded-full bg-primary-orange"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Grid (Existing) -->
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 border-t border-dark-brown/10 bg-white/30 grid-cols-1 md:grid-cols-2 gap-gutter items-center backdrop-blur-md">
+        <div
+            class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop">
+            <div>
+                <div class="font-display uppercase text-2xl text-primary-orange mb-2">ALPIKA</div>
+                <p class="text-sm text-dark-brown font-light">© 2024 Alpika Mountains &amp; Agriculture. Sustainable
+                    High Altitude Data.
+                </p>
+            </div>
+            <div class="flex gap-6 md:justify-end"><a
+                    class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                    href="#">Research</a><a
+                    class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                    href="#">Methodology</a><a
+                    class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                    href="#">Archive</a><a
+                    class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                    href="#">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script src="./js/header.js"></script>
+</body>
+
+</html>
+
+?
