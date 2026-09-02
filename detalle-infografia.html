@@ -84,7 +84,7 @@
         
                 <div class="max-w-4xl mb-12">
                     <div class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6">
-                        <span class="material-symbols-outlined text-[#FDBE2C] text-sm">menu_book</span>
+        
                         <span class="text-white/80 text-xs font-semibold uppercase tracking-widest">Informació ampliada</span>
                     </div>
                     <h1 class="font-display uppercase text-4xl md:text-6xl leading-[1.05] text-white">
@@ -96,109 +96,121 @@
                 </div>
 
              
-                <section class="max-w-4xl mb-14">
-                    <div class="flex items-center gap-3 mb-8">
-                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Fonts estadístiques i institucionals</h2>
+                <details open class="group bg-white/5 rounded-3xl border border-white/10 mb-5 overflow-hidden">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 md:px-8 py-5">
+                        <h2 class="font-display uppercase text-xl md:text-2xl text-white">Fonts estadístiques i institucionals</h2>
+                        <span class="material-symbols-outlined text-white/70 transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6">
+                        <ol class="space-y-4">
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Agència Catalana de l'Aigua (2025)</span> <span class="text-[#928070]">Zones vulnerables i nitrats.</span></p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Departament d'Agricultura, Ramaderia, Pesca i Alimentació (2025)</span> <span class="text-[#928070]">Visor interactiu del Registre d'explotacions ramaderes.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Localització, tipologia i capacitat de les explotacions ramaderes.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Idescat (2025)</span> <span class="text-[#928070]">Producció de carn. Per espècies.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució del nombre de caps sacrificats i del pes en canal per espècies, 2014-2024.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Observatori agroalimentari, rural i ambiental (2026)</span> <span class="text-[#928070]">Visió analítica de la ramaderia.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Estructura, evolució i distribució territorial del sector ramader.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Prodeca (2025)</span> <span class="text-[#928070]">Exportacions agroalimentàries de Catalunya 2024.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució i composició de les exportacions agroalimentàries i càrnies.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                                <p><span class="text-[#FEDEB5] font-medium">Riu, M. (2023)</span> <span class="text-[#928070]">El mapa de les macrogranges més contaminants de Catalunya. Crític.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Localització de les explotacions ramaderes amb més emissions contaminants.]</p>
+                            </li>
+                        </ol>
                     </div>
-                    <ol class="space-y-4">
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Agència Catalana de l'Aigua (2025)</span> <span class="text-[#928070]">Zones vulnerables i nitrats.</span></p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Departament d'Agricultura, Ramaderia, Pesca i Alimentació (2025)</span> <span class="text-[#928070]">Visor interactiu del Registre d'explotacions ramaderes.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Localització, tipologia i capacitat de les explotacions ramaderes.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Idescat (2025)</span> <span class="text-[#928070]">Producció de carn. Per espècies.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució del nombre de caps sacrificats i del pes en canal per espècies, 2014-2024.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Observatori agroalimentari, rural i ambiental (2026)</span> <span class="text-[#928070]">Visió analítica de la ramaderia.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estructura, evolució i distribució territorial del sector ramader.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Prodeca (2025)</span> <span class="text-[#928070]">Exportacions agroalimentàries de Catalunya 2024.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució i composició de les exportacions agroalimentàries i càrnies.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
-                            <p><span class="text-[#FEDEB5] font-medium">Riu, M. (2023)</span> <span class="text-[#928070]">El mapa de les macrogranges més contaminants de Catalunya. Crític.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Localització de les explotacions ramaderes amb més emissions contaminants.]</p>
-                        </li>
-                    </ol>
-                </section>
+                </details>
 
                 <!-- Section: Estudis i documents de referència -->
-                <section class="max-w-4xl mb-14">
-                    <div class="flex items-center gap-3 mb-8">
-                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Estudis i documents de referència</h2>
+                <details class="group bg-white/5 rounded-3xl border border-white/10 mb-5 overflow-hidden">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 md:px-8 py-5">
+                        <h2 class="font-display uppercase text-xl md:text-2xl text-white">Estudis i documents de referència</h2>
+                        <span class="material-symbols-outlined text-white/70 transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6">
+                        <ol class="space-y-4">
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                                <p><span class="text-[#FEDEB5] font-medium">Castro, M., Rodríguez, A., Horta, F. i Walsh, A. (2025)</span> <span class="text-[#928070]">Infraestructures per a l'alimentació sostenible. El cas de l'escorxador de l'Armentera. Institut de Recerca Urbana de Barcelona.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Paper dels escorxadors de baixa capacitat en els sistemes alimentaris territorialitzats.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                                <p><span class="text-[#FEDEB5] font-medium">Eady, S., Sanguansri, P., Bektash, R., Ridoutt, B., Simons, L. i Swiergon, P. (2013)</span> <span class="text-[#928070]">Carbon footprint for Australian agricultural products and downstream food products in the supermarket. CSIRO.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació de la petjada de carboni dels productes agraris i alimentaris.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                                <p><span class="text-[#FEDEB5] font-medium">De Miguel, Á., Hoekstra, A. Y. i García-Calvo, E. (2015)</span> <span class="text-[#928070]">Sustainability of the water footprint of the Spanish pork industry. Ecological Indicators, 57, 465-474.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació i sostenibilitat de la petjada hídrica del sector porcí espanyol.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                                <p><span class="text-[#FEDEB5] font-medium">Noya, I. et al. (2016)</span> <span class="text-[#928070]">Carbon and water footprint of pork supply chain in Catalonia: From feed to final products. Journal of Environmental Management, 171, 133-143.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada hídrica i de carboni de la cadena porcina catalana.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                                <p><span class="text-[#FEDEB5] font-medium">Yang, P., Yu, M., Ma, X. i Deng, D. (2023)</span> <span class="text-[#928070]">Carbon footprint of the pork product chain and recent advancements in mitigation strategies. Foods, 12(23), 4203.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada de carboni de la cadena porcina i estratègies de reducció.]</p>
+                            </li>
+                        </ol>
                     </div>
-                    <ol class="space-y-4">
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
-                            <p><span class="text-[#FEDEB5] font-medium">Castro, M., Rodríguez, A., Horta, F. i Walsh, A. (2025)</span> <span class="text-[#928070]">Infraestructures per a l'alimentació sostenible. El cas de l'escorxador de l'Armentera. Institut de Recerca Urbana de Barcelona.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Paper dels escorxadors de baixa capacitat en els sistemes alimentaris territorialitzats.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
-                            <p><span class="text-[#FEDEB5] font-medium">Eady, S., Sanguansri, P., Bektash, R., Ridoutt, B., Simons, L. i Swiergon, P. (2013)</span> <span class="text-[#928070]">Carbon footprint for Australian agricultural products and downstream food products in the supermarket. CSIRO.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació de la petjada de carboni dels productes agraris i alimentaris.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
-                            <p><span class="text-[#FEDEB5] font-medium">De Miguel, Á., Hoekstra, A. Y. i García-Calvo, E. (2015)</span> <span class="text-[#928070]">Sustainability of the water footprint of the Spanish pork industry. Ecological Indicators, 57, 465-474.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació i sostenibilitat de la petjada hídrica del sector porcí espanyol.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
-                            <p><span class="text-[#FEDEB5] font-medium">Noya, I. et al. (2016)</span> <span class="text-[#928070]">Carbon and water footprint of pork supply chain in Catalonia: From feed to final products. Journal of Environmental Management, 171, 133-143.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada hídrica i de carboni de la cadena porcina catalana.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
-                            <p><span class="text-[#FEDEB5] font-medium">Yang, P., Yu, M., Ma, X. i Deng, D. (2023)</span> <span class="text-[#928070]">Carbon footprint of the pork product chain and recent advancements in mitigation strategies. Foods, 12(23), 4203.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada de carboni de la cadena porcina i estratègies de reducció.]</p>
-                        </li>
-                    </ol>
-                </section>
+                </details>
 
                 <!-- Section: Per ampliar la informació -->
-                <section class="max-w-4xl mb-14">
-                    <div class="flex items-center gap-3 mb-8">
-                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Per ampliar la informació</h2>
+                <details class="group bg-white/5 rounded-3xl border border-white/10 mb-5 overflow-hidden">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 md:px-8 py-5">
+                        <h2 class="font-display uppercase text-xl md:text-2xl text-white">Per ampliar la informació</h2>
+                        <span class="material-symbols-outlined text-white/70 transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6">
+                        <ol class="space-y-4">
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
+                                <p><span class="text-[#FEDEB5] font-medium">Rodríguez, A., Sanz-Cobeña, A., Ruiz-Ramos, M., Aguilera, E., Quemada, M., Billen, G., Garnier, J. i Lassaletta, L. (2023)</span> <span class="text-[#928070]">Nesting nitrogen budgets through spatial and system scales in the Spanish agrofood system over 26 years. Science of the Total Environment, 892, 164467.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Fluxos i desequilibris de nitrogen del sistema agroalimentari espanyol.]</p>
+                            </li>
+                            <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
+                                <p><span class="text-[#FEDEB5] font-medium">Rubio-Ramon, G. (2025)</span> <span class="text-[#928070]">Animals that feed nations and nations that feed animals: Industrially farmed pigs as nation-building resources in Catalonia. Geoforum, 162, 104291.</span></p>
+                                <p class="text-[#928070] text-sm mt-1 ml-1">[Desenvolupament del model porcí industrial i la seva relació amb la construcció econòmica i territorial de Catalunya.]</p>
+                            </li>
+                        </ol>
                     </div>
-                    <ol class="space-y-4">
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
-                            <p><span class="text-[#FEDEB5] font-medium">Rodríguez, A., Sanz-Cobeña, A., Ruiz-Ramos, M., Aguilera, E., Quemada, M., Billen, G., Garnier, J. i Lassaletta, L. (2023)</span> <span class="text-[#928070]">Nesting nitrogen budgets through spatial and system scales in the Spanish agrofood system over 26 years. Science of the Total Environment, 892, 164467.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Fluxos i desequilibris de nitrogen del sistema agroalimentari espanyol.]</p>
-                        </li>
-                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
-                            <p><span class="text-[#FEDEB5] font-medium">Rubio-Ramon, G. (2025)</span> <span class="text-[#928070]">Animals that feed nations and nations that feed animals: Industrially farmed pigs as nation-building resources in Catalonia. Geoforum, 162, 104291.</span></p>
-                            <p class="text-[#928070] text-sm mt-1 ml-1">[Desenvolupament del model porcí industrial i la seva relació amb la construcció econòmica i territorial de Catalunya.]</p>
-                        </li>
-                    </ol>
-                </section>
+                </details>
 
                 <!-- Section: Notes metodològiques -->
-                <section class="max-w-4xl">
-                    <div class="flex items-center gap-3 mb-8">
-                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Notes metodològiques</h2>
+                <details class="group bg-white/5 rounded-3xl border border-white/10 mb-5 overflow-hidden">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 md:px-8 py-5">
+                        <h2 class="font-display uppercase text-xl md:text-2xl text-white">Notes metodològiques</h2>
+                        <span class="material-symbols-outlined text-white/70 transition-transform group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-6">
+                        <div class="bg-white/5 rounded-3xl p-6 md:p-8 space-y-5">
+                            <p class="text-[#928070] font-light leading-relaxed">Al gràfic <em class="text-[#FEDEB5] not-italic font-medium">"Caps de bestiar sacrificats"</em>, en el cas de l'aviram, els caps de bestiar són en milers.</p>
+                            <p class="text-[#928070] font-light leading-relaxed">El pes de la canal és el pes del cos d'un animal sacrificat un cop escorxat, eviscerat i netejat (sense òrgans interns, cap, potes ni cua). És la mesura oficial que s'utilitza en ramaderia per determinar el rendiment de la carn i fixar el preu de venda als escorxadors.</p>
+                            <p class="text-[#928070] font-light leading-relaxed">El contracte d'integració és un contracte per mitjà del qual una part s'obliga a proporcionar el bestiar, els subministraments necessaris i altres serveis per a la producció de béns pecuaris per a la reproducció, la cria o l'engreix, i l'altra s'obliga a facilitar els espais, les instal·lacions i els serveis necessaris per a la producció a canvi d'una remuneració que la primera part ha de satisfer segons la producció obtinguda (termcat). Veure també l'article de L'Enciclopèdia Catalana sobre la integració ramadera per una visió històrica amb visió crítica del procés d'integració a Catalunya.</p>
+                            <p class="text-[#928070] font-light leading-relaxed">El Decret 40/2014, de 25 de març, d'ordenació de les explotacions ramaderes estableix les següents definicions:</p>
+                            <ul class="space-y-3 ml-1">
+                                <li class="flex gap-3">
+                                    <span class="text-[#F26D33] shrink-0">—</span>
+                                    <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació extensiva:</strong> aquella en què els animals no estan allotjats dins d'instal·lacions i s'alimenten fonamentalment en el pasturatge.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-[#F26D33] shrink-0">—</span>
+                                    <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació intensiva:</strong> aquella en què els animals estan allotjats i són alimentats de manera permanent dins de les instal·lacions, inclosa l'explotació a l'aire lliure, anomenada sistema de càmping en el cas de l'espècie porcina.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-[#F26D33] shrink-0">—</span>
+                                    <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació semiintensiva:</strong> aquella en què l'alimentació es basa fonamentalment en la pastura, però els animals estan estabulats durant un cert període de l'any, normalment l'hivern, o bé durant la nit.</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="bg-white/5 rounded-3xl p-6 md:p-8 space-y-5">
-                        <p class="text-[#928070] font-light leading-relaxed">Al gràfic <em class="text-[#FEDEB5] not-italic font-medium">"Caps de bestiar sacrificats"</em>, en el cas de l'aviram, els caps de bestiar són en milers.</p>
-                        <p class="text-[#928070] font-light leading-relaxed">El pes de la canal és el pes del cos d'un animal sacrificat un cop escorxat, eviscerat i netejat (sense òrgans interns, cap, potes ni cua). És la mesura oficial que s'utilitza en ramaderia per determinar el rendiment de la carn i fixar el preu de venda als escorxadors.</p>
-                        <p class="text-[#928070] font-light leading-relaxed">El contracte d'integració és un contracte per mitjà del qual una part s'obliga a proporcionar el bestiar, els subministraments necessaris i altres serveis per a la producció de béns pecuaris per a la reproducció, la cria o l'engreix, i l'altra s'obliga a facilitar els espais, les instal·lacions i els serveis necessaris per a la producció a canvi d'una remuneració que la primera part ha de satisfer segons la producció obtinguda (termcat). Veure també l'article de L'Enciclopèdia Catalana sobre la integració ramadera per una visió històrica amb visió crítica del procés d'integració a Catalunya.</p>
-                        <p class="text-[#928070] font-light leading-relaxed">El Decret 40/2014, de 25 de març, d'ordenació de les explotacions ramaderes estableix les següents definicions:</p>
-                        <ul class="space-y-3 ml-1">
-                            <li class="flex gap-3">
-                                <span class="text-[#F26D33] shrink-0">—</span>
-                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació extensiva:</strong> aquella en què els animals no estan allotjats dins d'instal·lacions i s'alimenten fonamentalment en el pasturatge.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="text-[#F26D33] shrink-0">—</span>
-                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació intensiva:</strong> aquella en què els animals estan allotjats i són alimentats de manera permanent dins de les instal·lacions, inclosa l'explotació a l'aire lliure, anomenada sistema de càmping en el cas de l'espècie porcina.</span>
-                            </li>
-                            <li class="flex gap-3">
-                                <span class="text-[#F26D33] shrink-0">—</span>
-                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació semiintensiva:</strong> aquella en què l'alimentació es basa fonamentalment en la pastura, però els animals estan estabulats durant un cert període de l'any, normalment l'hivern, o bé durant la nit.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+                </details>
 
                 <!-- Back link -->
                 <div class="mt-14 pt-10 border-t border-white/10">
