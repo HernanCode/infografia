@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" type="image/png" href="./img/arranico.png">
+    <title>Com és la producció ramadera? - Fonts i documentació | Indicadors de Sobirania Alimentària</title>
+    <meta name="description" content="Informació ampliada de la infografia sobre la producció ramadera: fonts estadístiques, estudis de referència, ampliacions bibliogràfiques i notes metodològiques.">
+    <meta property="og:title" content="Com és la producció ramadera? - Fonts i documentació | ARANDETERRA">
+    <meta property="og:description" content="Fonts, estudis i notes metodològiques de la infografia sobre la producció ramadera.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ca_ES">
+    <meta name="twitter:card" content="summary">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config" src="./js/tailwind.config.js"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#221F1F] text-white font-body bg-noise antialiased relative min-h-screen">
+    <!-- Deep gradient depth background -->
+    <div class="fixed inset-0 z-[-2] bg-gradient-to-b from-[#2b2b2b] to-[#221F1F]"></div>
+
+    <!-- TopAppBar -->
+    <header
+        class="topbar fixed top-4 left-4 right-4 rounded-full shadow-sm flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto z-50">
+        <div class="flex items-center gap-2">
+            <a href="index.html"><img src="./img/logo.svg" alt="Arandeterra Logo" class="hidden md:block"></a>
+            <a href="index.html"
+                class="font-display uppercase text-3xl text-primary-orange tracking-wide md:hidden"><img src="./img/logo.svg" alt="Arandeterra Logo" class="md:block"></a>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="contacte.html"
+                class="hidden md:inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-6 py-2 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
+                Vols organitzar una presentació?
+            </a>
+            <button id="menu-btn" aria-label="Menu" aria-expanded="false"
+                class="md:hidden w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-current transition-colors hover:bg-white/10">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-24 left-4 right-4 z-40 rounded-3xl bg-white/95 backdrop-blur-xl border border-white/50 shadow-xl p-3">
+        <nav class="flex flex-col gap-1">
+            <a href="index.html"
+                class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Home</a>
+            <a href="projectes.html"
+                class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Infografies</a>
+            <a href="#"
+                class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Mètode</a>
+            <a href="contacte.html"
+                class="px-4 py-3 rounded-2xl mt-1 bg-primary-orange hover:bg-terracotta text-white font-semibold uppercase tracking-widest text-sm text-center transition-colors">Contacte</a>
+        </nav>
+    </div>
+
+    <main class="mx-auto relative">
+        <section class="bg-[#221F1F] pt-36 pb-16 px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+
+               
+                <nav class="flex items-center gap-2 md:mb-8 mb-4 text-sm">
+                    <a href="projectes.html" class="flex items-center gap-2 text-[#928070] hover:text-[#FEDEB5] transition-colors">
+                        <span class="material-symbols-outlined text-base">folder</span>
+                        <span class="uppercase tracking-widest text-xs">INFOGRAFIES</span>
+                    </a>
+                    <span class="material-symbols-outlined text-[#928070] text-sm">chevron_right</span>
+                    <a href="infografia.html" class="flex items-center gap-2 text-[#928070] hover:text-[#FEDEB5] transition-colors">
+                        <span class="uppercase tracking-widest text-xs">Producció ramadera</span>
+                    </a>
+                    <span class="material-symbols-outlined text-[#928070] text-sm">chevron_right</span>
+                    <span class="text-[#FEDEB5] uppercase tracking-widest text-xs">Veure més</span>
+                </nav>
+
+        
+                <div class="max-w-4xl mb-12">
+                    <div class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6">
+                        <span class="material-symbols-outlined text-[#FDBE2C] text-sm">menu_book</span>
+                        <span class="text-white/80 text-xs font-semibold uppercase tracking-widest">Informació ampliada</span>
+                    </div>
+                    <h1 class="font-display uppercase text-4xl md:text-6xl leading-[1.05] text-white">
+                        Com és la producció<br>ramadera?
+                    </h1>
+                    <p class="text-[#928070] font-light leading-relaxed text-lg mt-6 max-w-3xl">
+                        Fonts estadístiques, estudis de referència, propostes per ampliar la informació i notes metodològiques d'aquesta infografia.
+                    </p>
+                </div>
+
+             
+                <section class="max-w-4xl mb-14">
+                    <div class="flex items-center gap-3 mb-8">
+                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Fonts estadístiques i institucionals</h2>
+                    </div>
+                    <ol class="space-y-4">
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Agència Catalana de l'Aigua (2025)</span> <span class="text-[#928070]">Zones vulnerables i nitrats.</span></p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Departament d'Agricultura, Ramaderia, Pesca i Alimentació (2025)</span> <span class="text-[#928070]">Visor interactiu del Registre d'explotacions ramaderes.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Localització, tipologia i capacitat de les explotacions ramaderes.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Idescat (2025)</span> <span class="text-[#928070]">Producció de carn. Per espècies.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució del nombre de caps sacrificats i del pes en canal per espècies, 2014-2024.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Observatori agroalimentari, rural i ambiental (2026)</span> <span class="text-[#928070]">Visió analítica de la ramaderia.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estructura, evolució i distribució territorial del sector ramader.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Prodeca (2025)</span> <span class="text-[#928070]">Exportacions agroalimentàries de Catalunya 2024.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Evolució i composició de les exportacions agroalimentàries i càrnies.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#F26D33]">
+                            <p><span class="text-[#FEDEB5] font-medium">Riu, M. (2023)</span> <span class="text-[#928070]">El mapa de les macrogranges més contaminants de Catalunya. Crític.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Localització de les explotacions ramaderes amb més emissions contaminants.]</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Section: Estudis i documents de referència -->
+                <section class="max-w-4xl mb-14">
+                    <div class="flex items-center gap-3 mb-8">
+                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Estudis i documents de referència</h2>
+                    </div>
+                    <ol class="space-y-4">
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                            <p><span class="text-[#FEDEB5] font-medium">Castro, M., Rodríguez, A., Horta, F. i Walsh, A. (2025)</span> <span class="text-[#928070]">Infraestructures per a l'alimentació sostenible. El cas de l'escorxador de l'Armentera. Institut de Recerca Urbana de Barcelona.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Paper dels escorxadors de baixa capacitat en els sistemes alimentaris territorialitzats.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                            <p><span class="text-[#FEDEB5] font-medium">Eady, S., Sanguansri, P., Bektash, R., Ridoutt, B., Simons, L. i Swiergon, P. (2013)</span> <span class="text-[#928070]">Carbon footprint for Australian agricultural products and downstream food products in the supermarket. CSIRO.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació de la petjada de carboni dels productes agraris i alimentaris.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                            <p><span class="text-[#FEDEB5] font-medium">De Miguel, Á., Hoekstra, A. Y. i García-Calvo, E. (2015)</span> <span class="text-[#928070]">Sustainability of the water footprint of the Spanish pork industry. Ecological Indicators, 57, 465-474.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Estimació i sostenibilitat de la petjada hídrica del sector porcí espanyol.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                            <p><span class="text-[#FEDEB5] font-medium">Noya, I. et al. (2016)</span> <span class="text-[#928070]">Carbon and water footprint of pork supply chain in Catalonia: From feed to final products. Journal of Environmental Management, 171, 133-143.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada hídrica i de carboni de la cadena porcina catalana.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#FDBE2C]">
+                            <p><span class="text-[#FEDEB5] font-medium">Yang, P., Yu, M., Ma, X. i Deng, D. (2023)</span> <span class="text-[#928070]">Carbon footprint of the pork product chain and recent advancements in mitigation strategies. Foods, 12(23), 4203.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Petjada de carboni de la cadena porcina i estratègies de reducció.]</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Section: Per ampliar la informació -->
+                <section class="max-w-4xl mb-14">
+                    <div class="flex items-center gap-3 mb-8">
+                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Per ampliar la informació</h2>
+                    </div>
+                    <ol class="space-y-4">
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
+                            <p><span class="text-[#FEDEB5] font-medium">Rodríguez, A., Sanz-Cobeña, A., Ruiz-Ramos, M., Aguilera, E., Quemada, M., Billen, G., Garnier, J. i Lassaletta, L. (2023)</span> <span class="text-[#928070]">Nesting nitrogen budgets through spatial and system scales in the Spanish agrofood system over 26 years. Science of the Total Environment, 892, 164467.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Fluxos i desequilibris de nitrogen del sistema agroalimentari espanyol.]</p>
+                        </li>
+                        <li class="bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5 pl-8 border-l-4 border-[#BE5225]">
+                            <p><span class="text-[#FEDEB5] font-medium">Rubio-Ramon, G. (2025)</span> <span class="text-[#928070]">Animals that feed nations and nations that feed animals: Industrially farmed pigs as nation-building resources in Catalonia. Geoforum, 162, 104291.</span></p>
+                            <p class="text-[#928070] text-sm mt-1 ml-1">[Desenvolupament del model porcí industrial i la seva relació amb la construcció econòmica i territorial de Catalunya.]</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Section: Notes metodològiques -->
+                <section class="max-w-4xl">
+                    <div class="flex items-center gap-3 mb-8">
+                        <h2 class="font-display uppercase text-2xl md:text-3xl text-white">Notes metodològiques</h2>
+                    </div>
+                    <div class="bg-white/5 rounded-3xl p-6 md:p-8 space-y-5">
+                        <p class="text-[#928070] font-light leading-relaxed">Al gràfic <em class="text-[#FEDEB5] not-italic font-medium">"Caps de bestiar sacrificats"</em>, en el cas de l'aviram, els caps de bestiar són en milers.</p>
+                        <p class="text-[#928070] font-light leading-relaxed">El pes de la canal és el pes del cos d'un animal sacrificat un cop escorxat, eviscerat i netejat (sense òrgans interns, cap, potes ni cua). És la mesura oficial que s'utilitza en ramaderia per determinar el rendiment de la carn i fixar el preu de venda als escorxadors.</p>
+                        <p class="text-[#928070] font-light leading-relaxed">El contracte d'integració és un contracte per mitjà del qual una part s'obliga a proporcionar el bestiar, els subministraments necessaris i altres serveis per a la producció de béns pecuaris per a la reproducció, la cria o l'engreix, i l'altra s'obliga a facilitar els espais, les instal·lacions i els serveis necessaris per a la producció a canvi d'una remuneració que la primera part ha de satisfer segons la producció obtinguda (termcat). Veure també l'article de L'Enciclopèdia Catalana sobre la integració ramadera per una visió històrica amb visió crítica del procés d'integració a Catalunya.</p>
+                        <p class="text-[#928070] font-light leading-relaxed">El Decret 40/2014, de 25 de març, d'ordenació de les explotacions ramaderes estableix les següents definicions:</p>
+                        <ul class="space-y-3 ml-1">
+                            <li class="flex gap-3">
+                                <span class="text-[#F26D33] shrink-0">—</span>
+                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació extensiva:</strong> aquella en què els animals no estan allotjats dins d'instal·lacions i s'alimenten fonamentalment en el pasturatge.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#F26D33] shrink-0">—</span>
+                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació intensiva:</strong> aquella en què els animals estan allotjats i són alimentats de manera permanent dins de les instal·lacions, inclosa l'explotació a l'aire lliure, anomenada sistema de càmping en el cas de l'espècie porcina.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#F26D33] shrink-0">—</span>
+                                <span class="text-[#928070] font-light leading-relaxed"><strong class="text-[#FEDEB5] font-medium">Explotació semiintensiva:</strong> aquella en què l'alimentació es basa fonamentalment en la pastura, però els animals estan estabulats durant un cert període de l'any, normalment l'hivern, o bé durant la nit.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Back link -->
+                <div class="mt-14 pt-10 border-t border-white/10">
+                    <a href="infografia.html" class="inline-flex items-center gap-3 border border-white/20 hover:bg-white/5 text-white rounded-full px-6 py-2 text-sm font-semibold uppercase tracking-widest transition-colors">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Tornar a la infografia
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-dark-brown/10 bg-cream">
+        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10">
+            <!-- Logos -->
+            <div class="flex flex-col gap-6">
+                <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-10 w-auto"></a>
+            </div>
+            <div class="flex md:justify-end">
+                <img src="./img/faro.png" alt="Observatori FARO (UB)" class="h-12 w-auto">
+            </div>
+        </div>
+        <!-- Credits -->
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+                <div class="max-w-xl space-y-2">
+                    <p class="text-sm text-dark-brown font-light">© Arran de terra. El sistema alimentari català des de la sobirania alimentària. 3a edició dels Indicadors de Sobirania Alimentària a Catalunya. (2026).</p>
+                    <p class="text-sm text-dark-brown font-light">Autoria: Arran de terra SCCL i Observatori FARO (UB)</p>
+                    <p class="text-sm text-dark-brown font-light">Coordinació: Rosa Binimelis, Patricia Homs, Ana Moragues i Ana Pardo.</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end gap-2">
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="privacitat.html">Política de privacitat</a>
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="cookies.html">Política de cookies</a>
+                </div>
+            </div>
+            <div class="text-xs text-dark-brown/70 font-light text-center md:text-right">
+                web by cabra.design
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/header.js"></script>
+</body>
+
+</html>

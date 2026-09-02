@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Vall de Vinaixa - Nucli Històric | ARANDETERRA</title>
+    <link rel="icon" type="image/png" href="./img/arranico.png">
+    <title>Vall de Vinaixa - Nucli Històric | Indicadors de Sobirania Alimentària</title>
     <meta name="description" content="Nucli històric de Vall de Vinaixa - Infografia interactiva sobre patrimoni rural i evolució històrica del poble. Dades visuals i anàlisi territorial.">
     <meta property="og:title" content="Vall de Vinaixa - Nucli Històric | ARANDETERRA">
     <meta property="og:description" content="Infografia interactiva sobre patrimoni rural i evolució històrica del nucli de Vall de Vinaixa.">
@@ -38,18 +39,12 @@
         <div class="flex items-center gap-2">
             <a href="index.html"><img src="./img/logo.svg" alt="Arandeterra Logo" class="hidden md:block"></a>
             <a href="index.html"
-                class="font-display uppercase text-3xl text-primary-orange tracking-wide md:hidden">ARANDETERRA</a>
+                class="font-display uppercase text-3xl text-primary-orange tracking-wide md:hidden"><img src="./img/logo.svg" alt="Arandeterra Logo" class="md:block"></a>
         </div>
-        <nav class="hidden md:flex gap-8">
-            <a class="nav-link text-dark-brown font-medium hover:bg-white/50 hover:scale-105 transition-all duration-300 px-3 py-1 rounded-full text-sm uppercase tracking-widest"
-                href="index.html">HOME</a>
-            <a class="nav-link text-primary-orange font-semibold border-b-2 border-primary-orange pb-1 text-sm uppercase tracking-widest"
-                href="projectes.html">INFOGRAFIES</a>
-        </nav>
         <div class="flex items-center gap-3">
-            <a href="index.html#contact"
+            <a href="contacte.html"
                 class="hidden md:inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-6 py-2 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
-                Contacte
+                Vols organitzar una presentació?
             </a>
             <button id="menu-btn" aria-label="Menu" aria-expanded="false"
                 class="md:hidden w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-current transition-colors hover:bg-white/10">
@@ -67,7 +62,7 @@
                 class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Infografies</a>
             <a href="#"
                 class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Mètode</a>
-            <a href="index.html#contact"
+            <a href="contacte.html"
                 class="px-4 py-3 rounded-2xl mt-1 bg-primary-orange hover:bg-terracotta text-white font-semibold uppercase tracking-widest text-sm text-center transition-colors">Contacte</a>
         </nav>
     </div>
@@ -110,39 +105,23 @@
                     valor el llegat rural i oferir una eina divulgativa per a la posada en exposició al visitant.
                 </p>
 
-                <!-- Bibliography accordion -->
-                <div class="mb-10">
-                    <button id="biblio-btn" type="button" aria-expanded="false"
-                        class="w-full flex items-center gap-3 bg-[#4B4238] rounded-2xl px-6 py-4 text-left transition-colors hover:bg-[#54493e]">
-                        <span class="material-symbols-outlined text-[#FDBE2C]">menu_book</span>
-                        <span class="flex-1 font-semibold text-[#FEDEB5] text-sm uppercase tracking-widest">Bibliografia i fonts</span>
-                        <span id="biblio-chevron" class="material-symbols-outlined text-[#FDBE2C] transition-transform duration-300">expand_more</span>
-                    </button>
-                    <div id="biblio-panel" class="hidden bg-[#1d1c1a] rounded-b-2xl px-6 py-2">
-                        <ul class="divide-y divide-white/5 text-sm">
-                            <li class="py-4">
-                                <span class="block text-[#FEDEB5]">Jane M. Soler</span>
-                                <a href="#" class="text-[#928070] hover:text-[#FEDEB5] transition-colors">"Patrimoni rural i arquitectura popular a la Vall de Vinaixa", 2021.</a>
-                            </li>
-                            <li class="py-4">
-                                <span class="block text-[#FEDEB5]">Josep Roca</span>
-                                <a href="#" class="text-[#928070] hover:text-[#FEDEB5] transition-colors">"Cartografia històrica de les Garrigues", Institut d'Estudis, 2019.</a>
-                            </li>
-                            <li class="py-4">
-                                <span class="block text-[#FEDEB5]">Maria Puig</span>
-                                <a href="#" class="text-[#928070] hover:text-[#FEDEB5] transition-colors">"Agricultura d'alta muntanya i paisatge urbà", 2022.</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Download PDF button -->
-                <a href="#" class="inline-flex items-center gap-3 bg-[#F26D33] hover:bg-terracotta text-white rounded-full pl-4 pr-7 py-3 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
-                    <span class="bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-sm">download</span>
-                    </span>
-                    Descarregar PDF
-                </a>
+                <!-- Action buttons -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#" class="inline-flex items-center gap-3 bg-[#F26D33] hover:bg-terracotta text-white rounded-full pl-4 pr-7 py-3 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
+                        <span class="bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">download</span>
+                        </span>
+                        Descarregar PDF
+                    </a>
+                    <a href="detalle-infografia.html"
+                        class="inline-flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/20 text-white rounded-full pl-4 pr-7 py-3 font-semibold text-sm uppercase tracking-widest transition-colors">
+                        <span class="bg-white/10 text-[#FDBE2C] w-8 h-8 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">add</span>
+                        </span>
+                        Veure més
+                    </a>
+                </div>
             </section>
 
             <!-- Project credits
@@ -182,17 +161,33 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-12 border-t border-white/10 bg-white/5 backdrop-blur-md">
-        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop">
-            <div>
-                <div class="font-display uppercase text-2xl text-primary-orange mb-2">ARANDETERRA</div>
-                <p class="text-sm text-white/50 font-light">© 2026 Arandeterra</p>
+    <footer class="w-full py-12 border-t border-dark-brown/10 bg-cream">
+        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10">
+            <!-- Logos -->
+            <div class="flex flex-col gap-6">
+                <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-10 w-auto"></a>
             </div>
-            <div class="flex flex-wrap gap-3 md:gap-6 md:justify-end">
-                <a class="text-xs font-semibold uppercase tracking-wider text-white/60 hover:text-primary-orange transition-colors hover:opacity-100" href="projectes.html">Infografies</a>
-                <a class="text-xs font-semibold uppercase tracking-wider text-white/60 hover:text-primary-orange transition-colors hover:opacity-100" href="#">Recerca</a>
-                <a class="text-xs font-semibold uppercase tracking-wider text-white/60 hover:text-primary-orange transition-colors hover:opacity-100" href="#">Metodologia</a>
-                <a class="text-xs font-semibold uppercase tracking-wider text-white/60 hover:text-primary-orange transition-colors hover:opacity-100" href="#">Privacitat</a>
+            <div class="flex md:justify-end">
+                <img src="./img/faro.png" alt="Observatori FARO (UB)" class="h-12 w-auto">
+            </div>
+        </div>
+        <!-- Credits -->
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+                <div class="max-w-xl space-y-2">
+                    <p class="text-sm text-dark-brown font-light">© Arran de terra. El sistema alimentari català des de la sobirania alimentària. 3a edició dels Indicadors de Sobirania Alimentària a Catalunya. (2026).</p>
+                    <p class="text-sm text-dark-brown font-light">Autoria: Arran de terra SCCL i Observatori FARO (UB)</p>
+                    <p class="text-sm text-dark-brown font-light">Coordinació: Rosa Binimelis, Patricia Homs, Ana Moragues i Ana Pardo.</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end gap-2">
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="privacitat.html">Política de privacitat</a>
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="cookies.html">Política de cookies</a>
+                </div>
+            </div>
+            <div class="text-xs text-dark-brown/70 font-light text-center md:text-right">
+                web by cabra.design
             </div>
         </div>
     </footer>

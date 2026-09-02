@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Totes les Infografies - ARANDETERRA</title>
+    <link rel="icon" type="image/png" href="./img/arranico.png">
+    <title>Totes les Infografies | Indicadors de Sobirania Alimentària</title>
     <meta name="description" content="Arxiu d'infografies ARANDETERRA. Explora les nostres visualitzacions de dades sobre agricultura, aigua, ecosistemes i biodiversitat de muntanya.">
     <meta property="og:title" content="Totes les Infografies - ARANDETERRA">
     <meta property="og:description" content="Arxiu d'infografies ARANDETERRA. Visualitzacions de dades sobre agricultura, aigua, ecosistemes i biodiversitat de muntanya.">
@@ -34,20 +35,14 @@
     <header
         class="topbar fixed top-4 left-4 right-4 rounded-full shadow-sm flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto z-50">
         <div class="flex items-center gap-2">
-            <a href="index.html"><img src="./img/logo.svg" alt="Arandeterra Logo" class="hidden md:block"></a>
+            <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="hidden md:block"></a>
             <a href="index.html"
-                class="font-display uppercase text-3xl text-primary-orange tracking-wide md:hidden">ARANDETERRA</a>
+                class="font-display uppercase text-3xl text-primary-orange tracking-wide md:hidden"><img src="./img/logo.svg" alt="Arran de terra" class="md:block"></a>
         </div>
-        <nav class="hidden md:flex gap-8">
-            <a class="nav-link text-dark-brown font-medium hover:bg-white/50 hover:scale-105 transition-all duration-300 px-3 py-1 rounded-full text-sm uppercase tracking-widest"
-                href="index.html">HOME</a>
-            <a class="nav-link text-primary-orange font-semibold border-b-2 border-primary-orange pb-1 text-sm uppercase tracking-widest"
-                href="projectes.html">INFOGRAFIES</a>
-        </nav>
         <div class="flex items-center gap-3">
-            <a href="index.html#contact"
+            <a href="contacte.html"
                 class="hidden md:inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-6 py-2 font-semibold text-sm uppercase tracking-widest transition-colors shadow-md">
-                Contacte
+                Vols organitzar una presentació?
             </a>
             <button id="menu-btn" aria-label="Menu" aria-expanded="false"
                 class="md:hidden w-11 h-11 rounded-full border border-white/30 flex items-center justify-center text-current transition-colors hover:bg-white/10">
@@ -65,7 +60,7 @@
                 class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Infografies</a>
             <a href="#"
                 class="px-4 py-3 rounded-2xl hover:bg-black/5 text-dark-brown font-semibold uppercase tracking-widest text-sm">Mètode</a>
-            <a href="index.html#contact"
+            <a href="contacte.html"
                 class="px-4 py-3 rounded-2xl mt-1 bg-primary-orange hover:bg-terracotta text-white font-semibold uppercase tracking-widest text-sm text-center transition-colors">Contacte</a>
         </nav>
     </div>
@@ -76,12 +71,12 @@
             <div
                 class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6">
                 <span class="material-symbols-outlined text-primary-orange text-sm">folder_open</span>
-                <span class="text-white text-xs font-semibold uppercase tracking-widest">Arxiu de infografies</span>
+                <span class="text-white text-xs font-semibold uppercase tracking-widest">Arxiu d'infografies</span>
             </div>
             <h1 class="font-display uppercase text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto leading-tight">
-                Tots les  <span class="bg-gradient-to-r bg-clip-text text-transparent block from-primary-orange to-terracotta">nostres infografies</span>&nbsp;</h1>
-            <p class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 font-light">
-                Una mirada completa a les iniciatives de transició agroecològica, dades i infografies de muntanya.
+                Totes les <span class="bg-gradient-to-r bg-clip-text text-transparent block from-primary-orange to-terracotta">infografies dels Indicadors</span>&nbsp;</h1>
+            <p class="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-12 font-light">
+                Aquí trobaràs totes les infografies del projecte: dades sobre el sistema alimentari català des de la perspectiva de la sobirania alimentària.
             </p>
         </section>
 
@@ -97,16 +92,14 @@
                             class="w-full bg-[#1a1a1a] text-white placeholder-white/40 border border-white/15 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/30 outline-none rounded-full pl-14 pr-5 py-4 text-base shadow-inner transition-all">
                     </div>
                     <div class="flex flex-wrap gap-2 justify-center md:justify-end" id="filter-chips">
-                        <button data-filter="all"
-                            class="filter-chip bg-primary-orange text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Tots</button>
-                        <button data-filter="infografia"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Infografies</button>
-                        <button data-filter="interactiu"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Interactius</button>
-                        <button data-filter="dades"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Dades</button>
-                        <button data-filter="aigua"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Aigua</button>
+                        <button data-filter="cat1"
+                            class="filter-chip bg-primary-orange text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Categoria 1</button>
+                        <button data-filter="cat2"
+                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Categoria 2</button>
+                        <button data-filter="cat3"
+                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Categoria 3</button>
+                        <button data-filter="cat4"
+                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors">Categoria 4</button>
                     </div>
                 </div>
             </div>
@@ -115,7 +108,7 @@
 
             <!-- Projects Grid -->
             <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="infografia.html" class="project group block" data-tags="infografia interactiu">
+                <a href="infografia.html" class="project group block" data-tags="cat1 cat2">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-[#4A3B32] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
                         <h3 class="font-display text-3xl text-white uppercase text-center px-4">Vall de Vinaixa</h3>
@@ -124,7 +117,7 @@
                     <p class="text-white/70 font-body font-light">Pantalla interactiva per exposició a Vall de Vinaixa.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="dades infografia">
+                <a href="infografia.html" class="project group block" data-tags="cat3 cat1">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Ecosistemes</h3>
@@ -133,7 +126,7 @@
                     <p class="text-white/70 font-body font-light">Anàlisi de biodiversitat en zones de pastura.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="aigua dades">
+                <a href="infografia.html" class="project group block" data-tags="cat4 cat3">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-white mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Aigua Viva</h3>
@@ -142,7 +135,7 @@
                     <p class="text-white/70 font-body font-light">Gestió eficient dels recursos hídrics.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="interactiu infografia">
+                <a href="infografia.html" class="project group block" data-tags="cat2 cat1">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-amber-200 via-orange-200 to-red-200 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Farratge Alpí</h3>
@@ -151,7 +144,7 @@
                     <p class="text-white/70 font-body font-light">Mapa interactiu dels cultius de farratge d'alta muntanya.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="dades infografia">
+                <a href="infografia.html" class="project group block" data-tags="cat3 cat1">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-green-200 via-emerald-200 to-teal-200 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Pastures</h3>
@@ -160,7 +153,7 @@
                     <p class="text-white/70 font-body font-light">Evolució de les pastures comunals i la seva gestió.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="aigua interactiu">
+                <a href="infografia.html" class="project group block" data-tags="cat4 cat2">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-sky-200 via-blue-200 to-indigo-200 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Conques</h3>
@@ -169,7 +162,7 @@
                     <p class="text-white/70 font-body font-light">Visualització de conques i xarxa hídrica de muntanya.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="infografia">
+                <a href="infografia.html" class="project group block" data-tags="cat1">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.25)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Clima</h3>
@@ -178,7 +171,7 @@
                     <p class="text-white/70 font-body font-light">Impacte climàtic a la biodiversitat i el rendiment.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="dades interactiu">
+                <a href="infografia.html" class="project group block" data-tags="cat3 cat2">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-stone-200 via-neutral-200 to-zinc-200 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Collita</h3>
@@ -187,7 +180,7 @@
                     <p class="text-white/70 font-body font-light">Dades de collita en temps real a les parcel·les.</p>
                 </a>
 
-                <a href="infografia.html" class="project group block" data-tags="infografia aigua">
+                <a href="infografia.html" class="project group block" data-tags="cat1 cat4">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-gradient-to-br from-cyan-100 via-sky-100 to-blue-100 mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.25)]">
                         <h3 class="font-display text-3xl text-[#1a1a1a] uppercase text-center px-4">Regadiu</h3>
@@ -201,14 +194,33 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-12 border-t border-white/10 bg-white/5 backdrop-blur-md">
-        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop">
-            <div>
-                <div class="font-display uppercase text-2xl text-primary-orange mb-2">Arandeterra</div>
-                <p class="text-sm text-white/50 font-light">© 2026 Arandeterra</p>
+    <footer class="w-full py-12 border-t border-dark-brown/10 bg-cream">
+        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10">
+            <!-- Logos -->
+            <div class="flex flex-col gap-6">
+                <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-10 w-auto"></a>
             </div>
-            <div class="flex flex-wrap gap-3 md:gap-6 md:justify-end">
-                <a class="text-xs font-semibold uppercase tracking-wider text-white/60 hover:text-primary-orange transition-colors hover:opacity-100" href="#">Infografies</a>
+            <div class="flex md:justify-end">
+                <img src="./img/faro.png" alt="Observatori FARO (UB)" class="h-12 w-auto">
+            </div>
+        </div>
+        <!-- Credits -->
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+                <div class="max-w-xl space-y-2">
+                    <p class="text-sm text-dark-brown font-light">© Arran de terra. El sistema alimentari català des de la sobirania alimentària. 3a edició dels Indicadors de Sobirania Alimentària a Catalunya. (2026).</p>
+                    <p class="text-sm text-dark-brown font-light">Autoria: Arran de terra SCCL i Observatori FARO (UB)</p>
+                    <p class="text-sm text-dark-brown font-light">Coordinació: Rosa Binimelis, Patricia Homs, Ana Moragues i Ana Pardo.</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end gap-2">
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="privacitat.html">Política de privacitat</a>
+                    <a class="text-xs font-semibold uppercase tracking-wider text-dark-brown hover:text-primary-orange transition-colors opacity-80 hover:opacity-100"
+                        href="cookies.html">Política de cookies</a>
+                </div>
+            </div>
+            <div class="text-xs text-dark-brown/70 font-light text-center md:text-right">
+                web by cabra.design
             </div>
         </div>
     </footer>
@@ -221,7 +233,7 @@
         const emptyState = document.getElementById('empty-state');
         const resultCount = document.getElementById('result-count');
 
-        let activeFilter = 'all';
+        let activeFilter = 'cat1';
         let query = '';
 
         const grid = document.getElementById('projects-grid');
@@ -234,7 +246,7 @@
                 const tags = (p.dataset.tags || ' ').split(' ');
                 const title = (p.querySelector('h3')?.textContent || '').toLowerCase();
                 const text = (p.textContent || '').toLowerCase();
-                const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+                const matchesFilter = tags.includes(activeFilter);
                 const matchesQuery = q === '' || title.includes(q) || text.includes(q);
                 const show = matchesFilter && matchesQuery;
                 if (show) {
