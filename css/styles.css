@@ -193,6 +193,43 @@ header.topbar--transparent .nav-link:hover {
     background: rgba(255,255,255,0.15);
 }
 
+.hero-onda {
+    position: absolute;
+    width: 320px;
+    height: auto;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 8px 24px rgba(75, 66, 56, 0.12));
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 0;
+}
+
+.onda-left {
+    bottom: -60px;
+    left: -60px;
+    transform: rotate(-15deg);
+}
+
+.onda-right {
+    top: -50px;
+    right: -60px;
+    transform: rotate(15deg);
+}
+
+@media (min-width: 768px) {
+    .hero-onda {
+        width: 520px;
+    }
+    .onda-left {
+        bottom: -100px;
+        left: -100px;
+    }
+    .onda-right {
+        top: -100px;
+        right: -100px;
+    }
+}
+
 details summary::-webkit-details-marker {
     display: none;
 }

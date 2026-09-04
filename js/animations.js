@@ -25,7 +25,23 @@
         tl.from('.glass-panel', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 })
           .from('h1', { opacity: 0, y: -FALL_DISTANCE, duration: 1 }, '-=0.5')
           .from('.stacked-1 p', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.6')
-          .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5');
+          .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5')
+          .from('#onda-left', {
+              x: -400,
+              y: 200,
+              opacity: 0,
+              rotation: '-=40',
+              duration: 1.4,
+              ease: 'power3.out'
+          }, '-=0.6')
+          .from('#onda-right', {
+              x: 400,
+              y: -200,
+              opacity: 0,
+              rotation: '+=40',
+              duration: 1.4,
+              ease: 'power3.out'
+          }, '-=1.2');
     }
 
     let stackedTrigger = null;
@@ -163,10 +179,23 @@
         });
     }
 
+    function animateTopoPattern() {
+        const topo = document.querySelector('.topo-pattern');
+        if (!topo) return;
+        gsap.to(topo, {
+            backgroundPosition: '40px 30px',
+            duration: 10,
+            ease: 'none',
+            repeat: -1,
+            yoyo: true,
+        });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         animateNavbar();
         animateHero();
         animateStackedTransition();
         animateScrollElements();
+        animateTopoPattern();
     });
 })();
