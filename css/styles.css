@@ -233,3 +233,9 @@ header.topbar--transparent .nav-link:hover {
 details summary::-webkit-details-marker {
     display: none;
 }
+
+form input:focus,
+form textarea:focus {
+    --tw-ring-color: #4B4238;
+    border-color: #4B4238;
+}
