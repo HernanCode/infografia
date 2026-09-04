@@ -23,6 +23,7 @@
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
         tl.from('.glass-panel', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 })
+          .from('.glass-float', { opacity: 0, scale: 0.5, duration: 0.6, stagger: 0.1 }, '-=0.6')
           .from('h1', { opacity: 0, y: -FALL_DISTANCE, duration: 1 }, '-=0.5')
           .from('.stacked-1 p', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.6')
           .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5')
@@ -183,11 +184,20 @@
         const topo = document.querySelector('.topo-pattern');
         if (!topo) return;
         gsap.to(topo, {
-            backgroundPosition: '40px 30px',
-            duration: 10,
+            backgroundPosition: '80px 60px',
+            duration: 14,
             ease: 'none',
             repeat: -1,
             yoyo: true,
+        });
+    }
+
+    function setupScrollDown() {
+        const btn = document.getElementById('scroll-down');
+        const stage = document.getElementById('stacked-stage');
+        if (!btn || !stage) return;
+        btn.addEventListener('click', () => {
+            stage.scrollIntoView({ behavior: 'smooth' });
         });
     }
 
@@ -197,5 +207,6 @@
         animateStackedTransition();
         animateScrollElements();
         animateTopoPattern();
+        setupScrollDown();
     });
 })();

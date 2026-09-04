@@ -69,12 +69,12 @@
         <section
             class="flex flex-col items-center justify-center text-center relative px-margin-mobile md:px-margin-desktop pt-40 bg-[#221F1F]">
             <div
-                class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6">
+                class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6" data-animate>
                 <span class="text-white text-xs font-semibold uppercase tracking-widest">Arxiu d'infografies</span>
             </div>
-            <h1 class="font-display uppercase text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto leading-tight">
+            <h1 class="font-display uppercase text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto leading-tight" data-animate>
                 Totes les <span class="bg-gradient-to-r bg-clip-text text-transparent block from-primary-orange to-terracotta">infografies dels Indicadors</span>&nbsp;</h1>
-            <p class="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-12 font-light">
+            <p class="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-12 font-light" data-animate>
                 Aquí trobaràs totes les infografies del projecte: dades sobre el sistema alimentari català des de la perspectiva de la sobirania alimentària.
             </p>
         </section>
@@ -82,7 +82,7 @@
         <!-- Search + Filters -->
         <div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div
-                class="rounded-3xl p-4 md:p-6 mb-10 border border-white/10 bg-white/5 backdrop-blur-md">
+                class="rounded-3xl p-4 md:p-6 mb-10 border border-white/10 bg-white/5 backdrop-blur-md" data-animate>
                 <div class="flex flex-col md:flex-row gap-4 md:items-center justify-between">
                     <div class="relative w-full md:max-w-md">
                         <span
@@ -106,7 +106,7 @@
             <p id="result-count" class="text-sm text-white/50 font-light text-left mb-6"></p>
 
             <!-- Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-animate data-children data-stagger="0.1">
                 <a href="infografia.html" class="project group block" data-tags="cat1 cat2">
                     <div
                         class="aspect-[16/10] rounded-3xl bg-[#4A3B32] mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
@@ -194,7 +194,7 @@
 
     <!-- Footer -->
     <footer class="w-full py-12 border-t border-dark-brown/10 bg-cream">
-        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10">
+        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10" data-animate data-children data-stagger="0.2">
             <!-- Logos -->
             <div class="flex flex-col gap-6">
                 <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-10 w-auto"></a>
@@ -204,7 +204,7 @@
             </div>
         </div>
         <!-- Credits -->
-        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6">
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6" data-animate data-children data-stagger="0.15">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
                 <div class="max-w-xl space-y-2">
                     <p class="text-sm text-dark-brown font-light">© Arran de terra. El sistema alimentari català des de la sobirania alimentària. 3a edició dels Indicadors de Sobirania Alimentària a Catalunya. (2026).</p>
@@ -224,6 +224,9 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./js/animations.js"></script>
     <script src="./js/header.js"></script>
     <script>
         const searchInput = document.getElementById('search-input');

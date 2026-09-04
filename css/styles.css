@@ -120,7 +120,7 @@ section.stacked {
     }
     .stacked-content {
         min-height: 0;
-        margin: auto 0;
+        margin: 10vh;
     }
     .stacked-track section.stacked .stacked-content > div {
         width: 100%;

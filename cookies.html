@@ -66,13 +66,13 @@
     <main class="mx-auto relative min-h-screen">
         <section
             class="flex flex-col items-center relative px-margin-mobile md:px-margin-desktop pt-32 pb-16">
-            <div class="glass-panel px-4 py-2 rounded-full mb-6 inline-flex items-center gap-2 shadow-sm">
+            <div class="glass-panel px-4 py-2 rounded-full mb-6 inline-flex items-center gap-2 shadow-sm" data-animate>
                 <span class="text-xs font-semibold text-dark-brown tracking-widest uppercase">Legal</span>
             </div>
-            <h1 class="font-display uppercase text-4xl md:text-6xl text-black-text mb-8 leading-tight text-center">
+            <h1 class="font-display uppercase text-4xl md:text-6xl text-black-text mb-8 leading-tight text-center" data-animate>
                 Política de Cookies
             </h1>
-            <div class="w-full max-w-5xl mx-auto text-left space-y-4 bg-white/40 backdrop-blur-md rounded-3xl p-8 md:p-14 border border-white/50 shadow-sm">
+            <div class="w-full max-w-5xl mx-auto text-left space-y-4 bg-white/40 backdrop-blur-md rounded-3xl p-8 md:p-14 border border-white/50 shadow-sm" data-animate>
                 <p class="text-dark-brown font-light leading-relaxed">Aquesta política de galetes es va actualitzar per última vegada el 27 de gener de 2026 i s'aplica a ciutadans i residents legals permanents de l'Espai Econòmic Europeu i Suïssa.</p>
 
                 <h2 class="font-display text-2xl text-dark-brown mt-8">1. Introducció</h2>
@@ -294,7 +294,7 @@
 
     <!-- Footer -->
     <footer class="w-full py-12 border-t border-dark-brown/10 bg-white/30 backdrop-blur-md">
-        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10">
+        <div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop mb-10" data-animate data-children data-stagger="0.2">
             <div class="flex flex-col gap-6">
                 <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-10 w-auto"></a>
             </div>
@@ -302,7 +302,7 @@
                 <img src="./img/faro.png" alt="Observatori FARO (UB)" class="h-12 w-auto">
             </div>
         </div>
-        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6">
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop border-t border-dark-brown/10 pt-8 flex flex-col gap-6" data-animate data-children data-stagger="0.15">
             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
                 <div class="max-w-xl space-y-2">
                     <p class="text-sm text-dark-brown font-light">© Arran de terra. El sistema alimentari català des de la sobirania alimentària. 3a edició dels Indicadors de Sobirania Alimentària a Catalunya. (2026).</p>
@@ -322,6 +322,9 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./js/animations.js"></script>
     <script src="./js/header.js"></script>
 </body>
 
