@@ -38,6 +38,39 @@ section.stacked {
     overflow: hidden;
 }
 
+#stacked-stage {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#stacked-stage section.stacked {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+#stacked-stage .stacked-page {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+}
+
+#stacked-stage .stacked-2 .stacked-page { z-index: 2; }
+#stacked-stage .stacked-3 .stacked-page { z-index: 1; opacity: 0; }
+
+.stacked-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .stacked-1 { z-index: 1; }
 .stacked-2 { z-index: 2; }
 .stacked-3 { z-index: 3; }

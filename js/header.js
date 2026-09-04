@@ -1,6 +1,7 @@
 (() => {
     const header = document.querySelector('header.topbar');
     const sections = Array.from(document.querySelectorAll('main section, section#contact, footer'));
+    const stage = document.getElementById('stacked-stage');
 
     function isDark(rgb) {
         const m = rgb.match(/[\d.]+/g);
@@ -18,7 +19,20 @@
                 break;
             }
         }
-        const dark = active ? isDark(getComputedStyle(active).backgroundColor) : false;
+
+        let dark;
+        if (stage) {
+            const sr = stage.getBoundingClientRect();
+            const visible = sr.top < window.innerHeight && sr.bottom > 0;
+            if (visible) {
+                dark = true;
+            } else {
+                dark = active ? isDark(getComputedStyle(active).backgroundColor) : false;
+            }
+        } else {
+            dark = active ? isDark(getComputedStyle(active).backgroundColor) : false;
+        }
+
         header.classList.toggle('topbar--transparent', dark);
     }
 
