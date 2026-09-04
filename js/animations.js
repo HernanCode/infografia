@@ -107,7 +107,7 @@
             start: 'top top',
             end: '+=150%',
             pin: true,
-            anticipatePin: 1,
+            anticipatePin: 0.5,
             onUpdate: (self) => {
                 if (self.progress > 0.5) {
                     tl.play();
