@@ -28,16 +28,34 @@
           .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5');
     }
 
-    function animateStackedTransition() {
+    let stackedTrigger = null;
+    let stackedTrackListener = null;
+    let stackedIsMobile = null;
+
+    function teardownStacked(page2, page3, track) {
+        if (stackedTrigger) {
+            stackedTrigger.kill();
+            stackedTrigger = null;
+        }
+        if (stackedTrackListener && track) {
+            track.removeEventListener('scroll', stackedTrackListener);
+            stackedTrackListener = null;
+        }
+        if (page2) gsap.set(page2, { opacity: 1, y: 0 });
+        if (page3) gsap.set(page3, { opacity: 1, y: 0 });
+    }
+
+    function setupStacked() {
         const stage = document.getElementById('stacked-stage');
         if (!stage) return;
 
         const page2 = stage.querySelector('.stacked-2 .stacked-page');
         const page3 = stage.querySelector('.stacked-3 .stacked-page');
+        const track = stage.querySelector('.stacked-track');
         if (!page2 || !page3) return;
 
+        teardownStacked(page2, page3, track);
         gsap.set(stage.querySelectorAll('[data-animate]'), { opacity: 1, y: 0 });
-        gsap.set(page3, { opacity: 0, y: 40 });
 
         const dots = stage.querySelectorAll('.stacked-dot');
         const setSlide = (n) => {
@@ -46,12 +64,28 @@
                 dot.classList.toggle('bg-[#928070]', i !== n - 1);
             });
         };
+        setSlide(1);
+
+        if (window.innerWidth < 768) {
+            gsap.set(page3, { opacity: 1, y: 0 });
+
+            if (track && dots.length) {
+                stackedTrackListener = () => {
+                    const index = Math.round(track.scrollLeft / track.clientWidth);
+                    setSlide(index + 1);
+                };
+                track.addEventListener('scroll', stackedTrackListener, { passive: true });
+            }
+            return;
+        }
+
+        gsap.set(page3, { opacity: 0, y: 40 });
 
         const tl = gsap.timeline({ paused: true });
         tl.to(page2, { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' })
           .to(page3, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '+=0.3');
 
-        ScrollTrigger.create({
+        stackedTrigger = ScrollTrigger.create({
             trigger: stage,
             start: 'top top',
             end: '+=150%',
@@ -67,6 +101,20 @@
                 }
             },
         });
+    }
+
+    function handleStackedResize() {
+        const mobile = window.innerWidth < 768;
+        if (mobile === stackedIsMobile) return;
+        stackedIsMobile = mobile;
+        setupStacked();
+        ScrollTrigger.refresh();
+    }
+
+    function animateStackedTransition() {
+        stackedIsMobile = window.innerWidth < 768;
+        setupStacked();
+        window.addEventListener('resize', handleStackedResize);
     }
 
     function animateScrollElements() {

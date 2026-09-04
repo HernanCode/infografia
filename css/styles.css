@@ -45,7 +45,12 @@ section.stacked {
     z-index: 2;
 }
 
-#stacked-stage section.stacked {
+.stacked-track {
+    position: relative;
+    height: 100%;
+}
+
+.stacked-track section.stacked {
     position: absolute !important;
     top: 0;
     left: 0;
@@ -53,7 +58,7 @@ section.stacked {
     height: 100vh;
 }
 
-#stacked-stage .stacked-page {
+.stacked-track .stacked-page {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -61,14 +66,103 @@ section.stacked {
     will-change: transform, opacity;
 }
 
-#stacked-stage .stacked-2 .stacked-page { z-index: 2; }
-#stacked-stage .stacked-3 .stacked-page { z-index: 1; opacity: 0; }
+.stacked-track .stacked-2 .stacked-page { z-index: 2; }
+.stacked-track .stacked-3 .stacked-page { z-index: 1; opacity: 0; }
 
 .stacked-content {
     min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+    #stacked-stage {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .stacked-track {
+        position: relative;
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .stacked-track section.stacked {
+        position: relative !important;
+        left: auto;
+        right: auto;
+        top: auto;
+        flex: 0 0 100vw;
+        min-width: 100vw;
+        height: 100%;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+    .stacked-track .stacked-page {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .stacked-track .stacked-3 .stacked-page {
+        opacity: 1;
+    }
+    .stacked-content {
+        min-height: 0;
+        margin: auto 0;
+    }
+    .stacked-track section.stacked .stacked-content > div {
+        width: 100%;
+    }
+    .stacked-track .stacked-page .w-16 {
+        width: 2.625rem;
+        height: 2.625rem;
+        border-radius: 0.75rem;
+    }
+    .stacked-track .stacked-page .text-3xl {
+        font-size: 1.25rem;
+    }
+    .stacked-track section.stacked h3 {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+    .stacked-track section.stacked p {
+        font-size: 0.8125rem;
+        line-height: 1.45;
+    }
+    .stacked-track .grid {
+        gap: 1rem 1.5rem;
+    }
+    .stacked-track section.stacked h2 {
+        font-size: 2.25rem;
+        line-height: 1.05;
+        margin-bottom: 1.25rem;
+    }
+    #stacked-stage .stacked-cta {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0 2.75rem;
+        background: #221F1F;
+    }
 }
 
 .stacked-1 { z-index: 1; }
