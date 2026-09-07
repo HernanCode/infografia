@@ -45,6 +45,36 @@
           }, '-=1.2');
     }
 
+    function animateCtaOndas() {
+        const cta = document.getElementById('cta-stage');
+        const ondaLeft = document.getElementById('cta-onda-left');
+        const ondaRight = document.getElementById('cta-onda-right');
+        if (!cta || !ondaLeft || !ondaRight) return;
+
+        const tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+        tl.from(ondaLeft, {
+            x: -400,
+            y: 200,
+            opacity: 0,
+            rotation: '-=40',
+            duration: 1.4,
+        }).from(ondaRight, {
+            x: 400,
+            y: -200,
+            opacity: 0,
+            rotation: '+=40',
+            duration: 1.4,
+            ease: 'power3.out',
+        }, '-=1.2');
+
+        ScrollTrigger.create({
+            trigger: cta,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => tl.play(),
+        });
+    }
+
     let stackedTrigger = null;
     let stackedTrackListener = null;
     let stackedScrollListener = null;
@@ -107,9 +137,9 @@
         tl.to(page2, { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' })
           .to(page3, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '+=0.3');
 
-        const stageHeight = stage.offsetHeight;
-        const trackStart = stage.getBoundingClientRect().top + window.scrollY;
-        const pinDistance = stageHeight - window.innerHeight;
+        // después
+const trackStart = stage.getBoundingClientRect().top + window.scrollY;
+const pinDistance = 1.5 * window.innerHeight; // 150vh fijos, independiente de cuánto alarguemos #stacked-stage para el CTA
 
         stackedScrollListener = () => {
             const scrollPos = window.scrollY;
@@ -191,14 +221,16 @@
     }
 
     function animateTopoPattern() {
-        const topo = document.querySelector('.topo-pattern');
-        if (!topo) return;
-        gsap.to(topo, {
-            backgroundPosition: '80px 60px',
-            duration: 14,
-            ease: 'none',
-            repeat: -1,
-            yoyo: true,
+        const topo = document.querySelectorAll('.topo-pattern, .topo-pattern-light');
+        if (!topo.length) return;
+        topo.forEach((el) => {
+            gsap.to(el, {
+                backgroundPosition: '80px 60px',
+                duration: 14,
+                ease: 'none',
+                repeat: -1,
+                yoyo: true,
+            });
         });
     }
 
@@ -214,6 +246,7 @@
     window.addEventListener('DOMContentLoaded', () => {
         animateNavbar();
         animateHero();
+        animateCtaOndas();
         animateStackedTransition();
         animateScrollElements();
         animateTopoPattern();
