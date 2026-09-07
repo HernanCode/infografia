@@ -93,27 +93,40 @@ section.stacked {
 }
 
 @media (max-width: 767.98px) {
+    section.stacked.stacked-1,
+    section.stacked.stacked-2,
+    section.stacked.stacked-3 {
+        position: relative !important;
+        top: auto;
+        height: auto;
+    }
+    section.stacked.stacked-1 {
+        min-height: 100vh;
+        overflow: hidden;
+    }
     #stacked-stage {
         position: relative;
-        height: 100vh;
-        overflow: hidden;
+        height: auto;
+        overflow: visible;
         display: flex;
         flex-direction: column;
     }
     #stacked-stage .sticky-wrapper {
         position: relative;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         overflow: hidden;
     }
     .stacked-track {
         position: relative;
-        flex: 1 1 auto;
+        flex: 0 0 auto;
         min-height: 0;
         display: flex;
+        flex-direction: row;
         overflow-x: auto;
         overflow-y: hidden;
+        width: 100%;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
     }
@@ -124,7 +137,9 @@ section.stacked {
         top: auto;
         flex: 0 0 100vw;
         min-width: 100vw;
-        height: 100%;
+        width: 100vw;
+        height: auto;
+        min-height: 80vh;
         overflow-y: auto;
         scroll-snap-align: start;
     }
@@ -132,7 +147,7 @@ section.stacked {
         position: relative;
         inset: auto;
         width: 100%;
-        height: 100%;
+        height: auto;
         justify-content: flex-start;
         padding-top: 1rem;
         display: flex;
@@ -143,8 +158,9 @@ section.stacked {
     }
     .stacked-content {
         min-height: 0;
-        margin: 10vh;
+        margin: 10vh auto;
         padding-top: 0;
+        max-width: 100%;
     }
     .stacked-track section.stacked .stacked-content > div {
         width: 100%;
@@ -175,7 +191,7 @@ section.stacked {
     }
     #stacked-stage .stacked-cta {
         position: relative;
-        top: calc(250vh - 5rem);
+        top: auto;
         bottom: auto;
         left: auto;
         right: auto;
@@ -191,7 +207,7 @@ section.stacked {
         position: relative;
         height: auto;
         z-index: 3;
-    margin-top: 0; /* nuevo */
+        margin-top: 0;
     }
     #cta-stage .sticky-wrapper {
         position: relative;
@@ -215,34 +231,36 @@ section.stacked {
 .stacked-3 { z-index: 3; }
 .stacked-4 { z-index: 4; }
 
-#cta-stage {
-    position: relative;
-    height: 200vh;
-    z-index: 3;
-    margin-top: -100vh; 
-}
+@media (min-width: 768px) {
+    #cta-stage {
+        position: relative;
+        height: 200vh;
+        z-index: 3;
+        margin-top: -100vh;
+    }
 
-#cta-stage .sticky-wrapper {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-}
+    #cta-stage .sticky-wrapper {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
 
-#cta-stage section.stacked {
-    position: relative !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-}
+    #cta-stage section.stacked {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+    }
 
-#cta-stage .stacked-page {
-    position: relative;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    will-change: transform, opacity;
+    #cta-stage .stacked-page {
+        position: relative;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        will-change: transform, opacity;
+    }
 }
 
 header.topbar {
