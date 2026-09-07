@@ -40,9 +40,15 @@ section.stacked {
 
 #stacked-stage {
     position: relative;
+    height: 250vh;
+    z-index: 2;
+}
+
+#stacked-stage .sticky-wrapper {
+    position: sticky;
+    top: 0;
     height: 100vh;
     overflow: hidden;
-    z-index: 2;
 }
 
 .stacked-track {
@@ -74,6 +80,7 @@ section.stacked {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 8vh;
 }
 
 @media (max-width: 767.98px) {
@@ -83,6 +90,13 @@ section.stacked {
         overflow: hidden;
         display: flex;
         flex-direction: column;
+    }
+    #stacked-stage .sticky-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
     .stacked-track {
         position: relative;
@@ -121,6 +135,7 @@ section.stacked {
     .stacked-content {
         min-height: 0;
         margin: 10vh;
+        padding-top: 0;
     }
     .stacked-track section.stacked .stacked-content > div {
         width: 100%;
@@ -195,38 +210,39 @@ header.topbar--transparent .nav-link:hover {
 
 .hero-onda {
     position: absolute;
-    width: 320px;
+    width: 480px;
     height: auto;
     will-change: transform, opacity;
     filter: drop-shadow(0 8px 24px rgba(75, 66, 56, 0.12));
     pointer-events: none;
     opacity: 0.85;
     z-index: 0;
+    transform-origin: center center;
 }
 
 .onda-left {
-    bottom: -60px;
-    left: -60px;
-    transform: rotate(-15deg);
+    bottom: -140px;
+    left: -140px;
+    transform: rotate(20deg);
 }
 
 .onda-right {
-    top: -50px;
-    right: -60px;
-    transform: rotate(15deg);
+    top: -140px;
+    right: -140px;
+    transform: rotate(200deg); /* -35 + 180 */
 }
 
 @media (min-width: 768px) {
     .hero-onda {
-        width: 520px;
+        width: 1200px;
     }
     .onda-left {
-        bottom: -100px;
-        left: -100px;
+        bottom: -260px;
+        left: -260px;
     }
     .onda-right {
-        top: -100px;
-        right: -100px;
+        top: -260px;
+        right: -260px;
     }
 }
 

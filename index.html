@@ -111,13 +111,14 @@
                 </a>
             
             </div>
-            <button id="scroll-down" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-brown/60 hover:text-dark-brown transition-colors cursor-pointer">
-                <span class="text-lg md:text-xl font-bold uppercase tracking-widest">Comença</span>
+            <button id="scroll-down" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-brown hover:text-dark-brown transition-colors cursor-pointer">
+                <span class="text-lg md:text-xl">Comença</span>
                 <span class="material-symbols-outlined text-2xl animate-bounce">keyboard_arrow_down</span>
             </button>
         </section>
         <!-- Dades i coneixement del Territori Section -->
-        <div id="stacked-stage" class="bg-[#221F1F] rounded-t-[40px]">
+        <div id="stacked-stage">
+        <div class="sticky-wrapper bg-[#221F1F] rounded-t-[40px]">
         <div class="stacked-track">
         <section
             class="stacked stacked-2 relative overflow-hidden w-full">
@@ -130,7 +131,7 @@
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mb-4" data-animate data-children data-stagger="0.15">
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 mb-10">
                         <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#4B4238] flex items-center justify-center">
                             <span class="material-symbols-outlined text-[#FDBE2C] text-3xl font-light">history</span>
                         </div>
@@ -254,6 +255,7 @@
                 <span class="stacked-dot w-4 h-1 rounded-full bg-primary-orange"></span>
                 <span class="stacked-dot w-4 h-1 rounded-full bg-[#928070]"></span>
             </div>
+        </div>
         </div>
         </div>
         <!-- Projects Grid (Existing) -->

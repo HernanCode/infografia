@@ -47,6 +47,7 @@
 
     let stackedTrigger = null;
     let stackedTrackListener = null;
+    let stackedScrollListener = null;
     let stackedIsMobile = null;
 
     function teardownStacked(page2, page3, track) {
@@ -57,6 +58,10 @@
         if (stackedTrackListener && track) {
             track.removeEventListener('scroll', stackedTrackListener);
             stackedTrackListener = null;
+        }
+        if (stackedScrollListener) {
+            window.removeEventListener('scroll', stackedScrollListener);
+            stackedScrollListener = null;
         }
         if (page2) gsap.set(page2, { opacity: 1, y: 0 });
         if (page3) gsap.set(page3, { opacity: 1, y: 0 });
@@ -83,7 +88,7 @@
         };
         setSlide(1);
 
-        if (window.innerWidth < 768) {
+        if (stackedIsMobile) {
             gsap.set(page3, { opacity: 1, y: 0 });
 
             if (track && dots.length) {
@@ -102,29 +107,34 @@
         tl.to(page2, { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' })
           .to(page3, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '+=0.3');
 
-        stackedTrigger = ScrollTrigger.create({
-            trigger: stage,
-            start: 'top top',
-            end: '+=150%',
-            pin: true,
-            anticipatePin: 0.5,
-            onUpdate: (self) => {
-                if (self.progress > 0.5) {
-                    tl.play();
-                    setSlide(2);
-                } else {
-                    tl.reverse();
-                    setSlide(1);
-                }
-            },
-        });
+        const stageHeight = stage.offsetHeight;
+        const trackStart = stage.getBoundingClientRect().top + window.scrollY;
+        const pinDistance = stageHeight - window.innerHeight;
+
+        stackedScrollListener = () => {
+            const scrollPos = window.scrollY;
+            const progress = Math.min(Math.max((scrollPos - trackStart) / Math.max(pinDistance, 1), 0), 1);
+            const halfway = 0.5;
+            if (progress >= halfway && tl.progress() < halfway) {
+                tl.play();
+                setSlide(2);
+            } else if (progress < halfway && tl.progress() >= halfway) {
+                tl.reverse();
+                setSlide(1);
+            }
+        };
+        window.addEventListener('scroll', stackedScrollListener, { passive: true });
+        stackedScrollListener();
     }
 
     function handleStackedResize() {
         const mobile = window.innerWidth < 768;
-        if (mobile === stackedIsMobile) return;
-        stackedIsMobile = mobile;
-        setupStacked();
+        if (mobile !== stackedIsMobile) {
+            stackedIsMobile = mobile;
+            setupStacked();
+        } else if (!mobile) {
+            setupStacked();
+        }
         ScrollTrigger.refresh();
     }
 
