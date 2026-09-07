@@ -137,13 +137,17 @@
         tl.to(page2, { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' })
           .to(page3, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '+=0.3');
 
-        // después
-const trackStart = stage.getBoundingClientRect().top + window.scrollY;
-const pinDistance = 1.5 * window.innerHeight; // 150vh fijos, independiente de cuánto alarguemos #stacked-stage para el CTA
+        // La transición se dispara de golpe al cruzar el punto de cambio, pero las
+        // secciones quedan "bloqueadas" un tramo de scroll antes y después para que
+        // no se pierda la animación aunque se haga scroll a velocidad normal.
+        const trackStart = stage.getBoundingClientRect().top + window.scrollY;
+        const vh = window.innerHeight;
+        const triggerStart = trackStart + 0.5 * vh;  // margen muerto antes del fade
+        const triggerWindow = 1.5 * vh;              // el fade se dispara a mitad de esta ventana
 
         stackedScrollListener = () => {
             const scrollPos = window.scrollY;
-            const progress = Math.min(Math.max((scrollPos - trackStart) / Math.max(pinDistance, 1), 0), 1);
+            const progress = Math.min(Math.max((scrollPos - triggerStart) / Math.max(triggerWindow, 1), 0), 1);
             const halfway = 0.5;
             if (progress >= halfway && tl.progress() < halfway) {
                 tl.play();
