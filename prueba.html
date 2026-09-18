@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" type="image/png" href="./img/arranico.png">
+    <title>Indicadors de Sobirania Alimentària a Catalunya | Arran de terra</title>
+    <meta name="description" content="Indicadors de Sobirania Alimentària a Catalunya">
+    <meta property="og:description" content="Dades per entendre el sistema alimentari català i obrir el debat sobre la transició agroecològica.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indicadors.arandeterra.cat/">
+    <meta property="og:locale" content="ca_ES">
+    <link rel="canonical" href="https://indicadors.arandeterra.cat/">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+    <style>
+    /* Hamburger lines animated to X */
+    .burger-btn.is-active .line-top {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .burger-btn.is-active .line-mid {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .burger-btn.is-active .line-bot {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Overlay transition state */
+    #fullscreen-menu {
+        transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #fullscreen-menu.menu-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    #fullscreen-menu.menu-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+</style>
+<body>
+    <!-- Hamburger toggle button -->
+<button
+    aria-expanded="true"
+    aria-label="Obrir o tancar menú"
+    class="burger-btn is-active relative w-11 h-11 rounded-full flex flex-col justify-center items-center gap-[5px] bg-[#221F1F]/5 hover:bg-[#221F1F]/10 active:scale-95 transition-all p-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange"
+    id="menu-toggle"
+>
+    <span class="line-top block w-5 h-[2px] bg-[#221F1F] rounded-full origin-center transition-all duration-300"></span>
+    <span class="line-mid block w-5 h-[2px] bg-[#221F1F] rounded-full origin-center transition-all duration-200"></span>
+    <span class="line-bot block w-5 h-[2px] bg-[#221F1F] rounded-full origin-center transition-all duration-300"></span>
+</button>
+<!-- Overlay del menú a pantalla completa -->
+<div
+    class="menu-open fixed inset-0 z-40 bg-gradient-to-b from-[#221F1F] via-[#2a2624] to-[#4B4238] flex flex-col justify-between overflow-y-auto px-margin-mobile md:px-margin-desktop pt-28 pb-10"
+    id="fullscreen-menu"
+>
+
+    <!-- Fons amb textura -->
+    <div class="absolute inset-0 pointer-events-none topo-pattern-dark opacity-60"></div>
+
+    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary-orange/15 blur-3xl pointer-events-none"></div>
+
+    <div class="absolute bottom-10 left-[-80px] w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+
+    <!-- Navegació -->
+    <div class="relative z-10 max-w-container-max mx-auto w-full my-auto py-8">
+        <nav class="flex flex-col gap-5 md:gap-8">
+
+            <a class="group flex items-baseline gap-4 md:gap-6 text-white hover:text-primary-orange transition-colors duration-300" href="#">
+                <span class="font-display text-sm md:text-xl text-primary-orange tracking-wider font-semibold">01</span>
+                <span class="font-display uppercase text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-300">
+                    INICI <span class="text-grey-brown group-hover:text-cream/80 text-2xl md:text-4xl font-light">/ HOME</span>
+                </span>
+            </a>
+
+            <a class="group flex items-baseline gap-4 md:gap-6 text-white hover:text-primary-orange transition-colors duration-300" href="#">
+                <span class="font-display text-sm md:text-xl text-gold tracking-wider font-semibold">02</span>
+                <span class="font-display uppercase text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-300">
+                    PROJECTES
+                </span>
+            </a>
+
+            <a class="group flex items-baseline gap-4 md:gap-6 text-white hover:text-primary-orange transition-colors duration-300" href="#">
+                <span class="font-display text-sm md:text-xl text-primary-orange tracking-wider font-semibold">03</span>
+                <span class="font-display uppercase text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-300">
+                    DADES I TERRITORI
+                </span>
+            </a>
+
+            <a class="group flex items-baseline gap-4 md:gap-6 text-white hover:text-primary-orange transition-colors duration-300" href="#">
+                <span class="font-display text-sm md:text-xl text-gold tracking-wider font-semibold">04</span>
+                <span class="font-display uppercase text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-300">
+                    MÈTODE ALPIKA
+                </span>
+            </a>
+
+            <a class="group flex items-baseline gap-4 md:gap-6 text-white hover:text-primary-orange transition-colors duration-300" href="#">
+                <span class="font-display text-sm md:text-xl text-primary-orange tracking-wider font-semibold">05</span>
+                <span class="font-display uppercase text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-300">
+                    CONTACTE
+                </span>
+            </a>
+
+        </nav>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="relative z-10 max-w-container-max mx-auto w-full pt-8 border-t border-white/10 mt-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+
+            <div>
+                <span class="text-[11px] uppercase tracking-widest text-grey-brown block font-semibold mb-1">
+                    Contacte Directe
+                </span>
+
+                <a class="font-body text-base md:text-lg text-cream hover:text-primary-orange font-medium transition-colors"
+                   href="mailto:info@alpika.cat">
+                    info@alpika.cat
+                </a>
+            </div>
+
+            <div>
+                <span class="text-[11px] uppercase tracking-widest text-grey-brown block font-semibold mb-1">
+                    Localització
+                </span>
+
+                <p class="font-body text-sm md:text-base text-cream/90 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-gold text-base">
+                        location_on
+                    </span>
+                    Alt Pirineu · Catalunya
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-5 md:justify-end text-xs uppercase tracking-wider font-semibold text-grey-brown">
+                <a class="hover:text-cream transition-colors" href="#">Instagram</a>
+                <a class="hover:text-cream transition-colors" href="#">LinkedIn</a>
+                <a class="hover:text-cream transition-colors" href="#">Dades Obertes</a>
+                <a class="hover:text-cream transition-colors" href="#">Privacitat</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    const toggleBtn = document.getElementById('menu-toggle');
+    const fullscreenMenu = document.getElementById('fullscreen-menu');
+    const menuLinks = fullscreenMenu.querySelectorAll('a');
+
+    function toggleMenu() {
+
+        const isOpen = fullscreenMenu.classList.contains('menu-open');
+
+        if (isOpen) {
+
+            fullscreenMenu.classList.remove('menu-open');
+            fullscreenMenu.classList.add('menu-hidden');
+
+            toggleBtn.classList.remove('is-active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+
+            document.body.style.overflow = '';
+
+        } else {
+
+            fullscreenMenu.classList.remove('menu-hidden');
+            fullscreenMenu.classList.add('menu-open');
+
+            toggleBtn.classList.add('is-active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    toggleBtn.addEventListener('click', toggleMenu);
+
+    // Cierra el menú al hacer clic en cualquier enlace
+    menuLinks.forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            if (fullscreenMenu.classList.contains('menu-open')) {
+                toggleMenu();
+            }
+
+        });
+
+    });
+
+});
+</script>
+    
+</body>
+</html>
