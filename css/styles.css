@@ -3,6 +3,9 @@
             overflow-x: clip;
             max-width: 100%;
         }
+        html {
+            scrollbar-gutter: stable;
+        }
         [data-animate] {
             opacity: 0;
         }
@@ -315,12 +318,12 @@ header.topbar--transparent .nav-link:hover {
         width: 1200px;
     }
     .onda-left {
-        bottom: -260px;
-        left: -260px;
+        bottom: -300px;
+        left: -300px;
     }
     .onda-right {
-        top: -260px;
-        right: -260px;
+        top: -300px;
+        right: -300px;
     }
 }
 
