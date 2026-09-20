@@ -206,6 +206,19 @@ section.stacked {
         padding: 1.5rem 0 2.75rem;
         background: #221F1F;
     }
+    #stacked-stage .stacked-dots {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 30;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    #stacked-stage .stacked-dots.in-view {
+        opacity: 1;
+        visibility: visible;
+    }
     #cta-stage {
         position: relative;
         height: auto;

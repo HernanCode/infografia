@@ -78,6 +78,7 @@
     let stackedTrigger = null;
     let stackedTrackListener = null;
     let stackedScrollListener = null;
+    let stackedDotsToggle = null;
     let stackedIsMobile = null;
 
     function teardownStacked(page2, page3, track) {
@@ -92,6 +93,11 @@
         if (stackedScrollListener) {
             window.removeEventListener('scroll', stackedScrollListener);
             stackedScrollListener = null;
+        }
+        if (stackedDotsToggle) {
+            window.removeEventListener('scroll', stackedDotsToggle);
+            window.removeEventListener('resize', stackedDotsToggle);
+            stackedDotsToggle = null;
         }
         if (page2) gsap.set(page2, { opacity: 1, y: 0 });
         if (page3) gsap.set(page3, { opacity: 1, y: 0 });
@@ -127,6 +133,17 @@
                     setSlide(index + 1);
                 };
                 track.addEventListener('scroll', stackedTrackListener, { passive: true });
+            }
+
+            const dotsWrap = stage.querySelector('.stacked-dots');
+            if (dotsWrap) {
+                stackedDotsToggle = () => {
+                    const r = stage.getBoundingClientRect();
+                    dotsWrap.classList.toggle('in-view', r.bottom > 0 && r.top < window.innerHeight);
+                };
+                window.addEventListener('scroll', stackedDotsToggle, { passive: true });
+                window.addEventListener('resize', stackedDotsToggle);
+                stackedDotsToggle();
             }
             return;
         }

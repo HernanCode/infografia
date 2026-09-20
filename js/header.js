@@ -1,5 +1,6 @@
 (() => {
     const header = document.querySelector('header.topbar');
+    if (!header) return;
     const sections = Array.from(document.querySelectorAll('main section, section#contact, footer'));
     const stage = document.getElementById('stacked-stage');
 
