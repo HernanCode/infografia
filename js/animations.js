@@ -134,8 +134,8 @@
         gsap.set(page3, { opacity: 0, y: 40 });
 
         const tl = gsap.timeline({ paused: true });
-        tl.to(page2, { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' })
-          .to(page3, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '+=0.3');
+        tl.to(page2, { opacity: 0, y: -60, duration: 0.3, ease: 'power2.in' })
+          .to(page3, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' }, '+=0.2');
 
         // La transición se dispara de golpe al cruzar el punto de cambio, pero las
         // secciones quedan "bloqueadas" un tramo de scroll antes y después para que
