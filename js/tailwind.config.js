@@ -7,7 +7,8 @@ tailwind.config = {
                 "black-text": "#221F1F",
                 "primary-orange": "#F26D33",
                 "terracotta": "#BE5225",
-                "gold": "#FFC107"
+                "gold": "#FDBE2C",
+                "muted": "#928070"
             },
             "borderRadius": {
                 "DEFAULT": "1rem",

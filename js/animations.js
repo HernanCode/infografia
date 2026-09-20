@@ -113,7 +113,7 @@
         const setSlide = (n) => {
             dots.forEach((dot, i) => {
                 dot.classList.toggle('bg-primary-orange', i === n - 1);
-                dot.classList.toggle('bg-[#928070]', i !== n - 1);
+                dot.classList.toggle('bg-muted', i !== n - 1);
             });
         };
         setSlide(1);
