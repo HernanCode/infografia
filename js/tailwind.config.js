@@ -8,7 +8,8 @@ tailwind.config = {
                 "primary-orange": "#F26D33",
                 "terracotta": "#BE5225",
                 "gold": "#FDBE2C",
-                "muted": "#928070"
+                "muted": "#928070",
+                "green": "#3A7D44",
             },
             "borderRadius": {
                 "DEFAULT": "1rem",
@@ -26,7 +27,7 @@ tailwind.config = {
             },
             "fontFamily": {
                 "display": ["Oswald", "sans-serif"],
-                "body": ["Poppins", "sans-serif"]
+                "body": ["Public Sans", "sans-serif"]
             },
             "fontSize": {
                 "4xl": ["clamp(2rem, 1.3rem + 3vw, 2.5rem)", { "lineHeight": "1.15" }],

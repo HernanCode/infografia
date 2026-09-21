@@ -23,15 +23,15 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet">
     <script id="tailwind-config" src="./js/tailwind.config.js"></script>
     <link href="./css/styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-black-text text-white font-body bg-noise antialiased relative min-h-screen">
+<body class="bg-[#f5e6bd] text-dark-brown font-body bg-noise antialiased relative min-h-screen">
     <!-- Deep gradient depth background -->
-    <div class="fixed inset-0 z-[-2] bg-gradient-to-b from-[#2b2b2b] to-black-text"></div>
+    <div class="fixed inset-0 z-[-2] bg-gradient-to-b from-[#f7ecc9] to-[#f5e6bd]"></div>
 
     <!-- Logo i botó de menú, sempre visibles (transparents, sense barra) -->
     <div id="menu-controls"
@@ -107,28 +107,28 @@
     </div>
 
     <main class="mx-auto relative">
-        <section class="bg-black-text pt-36 pb-16 px-margin-mobile md:px-margin-desktop">
+        <section class="bg-[#f5e6bd] pt-36 pb-16 px-margin-mobile md:px-margin-desktop">
         <div class="max-w-container-max mx-auto">
 
             <!-- Breadcrumb -->
             <nav class="flex items-center gap-2 md:mb-8 mb-4 text-sm" data-animate>
-                <a href="projectes.html" class="flex items-center gap-2 text-muted hover:text-cream transition-colors">
+<a href="projectes.html" class="flex items-center gap-2 text-muted hover:text-dark-brown transition-colors">
                     <span class="material-symbols-outlined text-base">folder</span>
                     <span class="label-text text-xs">INFOGRAFIES</span>
                 </a>
                 <span class="material-symbols-outlined text-muted text-sm">chevron_right</span>
-                <span class="label-text text-xs text-cream">Nucli històric de Vall de Vinaixa</span>
+                <span class="label-text text-xs text-dark-brown">Cóm es la producció ramadera</span>
             </nav>
 
             <!-- Title -->
-            <h1 class="heading-text text-white mb-8" data-animate>
-                Nucli històric de<br>Vall de Vinaixa
+            <h1 class="heading-text text-dark-brown mb-8" data-animate>
+                Cóm es la producció ramadera
             </h1>
 
             <!-- Main image -->
-             <div
-                            class="aspect-[21/9] md:aspect-[21/9] rounded-3xl bg-dark-brown mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]" data-animate>
-                            <h3 class="card-heading-text text-2xl text-white text-center px-4">Vall de Vinaixa</h3>
+            <div
+                            class="rounded-3xl overflow-hidden mb-8 bg-dark-brown" data-animate>
+                            <img src="./img/1_Com%20és%20la%20producció%20agrícola.jpg" alt="Com és la producció agrícola" class="w-full h-auto">
                         </div>
             <!-- <div class="aspect-[21/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#2b2926] mb-10 flex items-center justify-center border border-white/10">
                 <span class="material-symbols-outlined text-white/20" style="font-size:80px;">image</span>
@@ -136,7 +136,7 @@
 
             <!-- Descriptive content -->
             <section class="max-w-3xl" data-animate>
-                <h2 class="subheading-text text-white mb-4">Sobre aquesta infografia</h2>
+                <h2 class="subheading-text text-dark-brown mb-4">Sobre aquesta infografia</h2>
                 <p class="body-text body-text--dark mb-10">
                     Aquesta infografia presenta el patrimoni construït i l'evolució històrica del nucli de Vall de
                     Vinaixa. A través de la visualització de dades cartogràfiques i fotogràfiques, s'explora la relació
@@ -154,8 +154,8 @@
                         Descarregar PDF
                     </a>
                     <a href="detalle-infografia.html"
-                        class="inline-flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/20 text-white rounded-full pl-4 pr-7 py-3 label-text transition-colors">
-                        <span class="bg-white/10 text-gold w-8 h-8 rounded-full flex items-center justify-center">
+                        class="inline-flex items-center gap-3 bg-dark-brown/5 hover:bg-dark-brown/10 border border-dark-brown/20 text-dark-brown rounded-full pl-4 pr-7 py-3 label-text transition-colors">
+                        <span class="bg-dark-brown/10 text-gold w-8 h-8 rounded-full flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">add</span>
                         </span>
                         Veure més
@@ -171,26 +171,26 @@
             </div> -->
 
             <!-- Prev / Next navigation -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 pt-10 border-t border-white/10" data-animate data-children data-stagger="0.2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 pt-10 border-t border-dark-brown/10" data-animate data-children data-stagger="0.2">
 
-                <a href="#" class="group flex items-center gap-4 bg-white/5 hover:bg-white/10 transition-colors rounded-3xl p-5">
-                    <span class="w-11 h-11 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-white transition-transform group-hover:-translate-x-1">
+                <a href="#" class="group flex items-center gap-4 bg-dark-brown/5 hover:bg-dark-brown/10 transition-colors rounded-3xl p-5">
+                    <span class="w-11 h-11 shrink-0 rounded-full border border-dark-brown/20 flex items-center justify-center text-dark-brown transition-transform group-hover:-translate-x-1">
                         <span class="material-symbols-outlined">arrow_back</span>
                     </span>
                     <span class="w-16 h-14 rounded-xl bg-dark-brown shrink-0 overflow-hidden"></span>
                     <span class="flex-1">
                         <span class="block label-text text-xs text-muted mb-1">Infografia anterior</span>
-                        <span class="block card-heading-text text-lg text-white">Ecosistemes</span>
+                        <span class="block card-heading-text text-lg text-dark-brown">Ecosistemes</span>
                     </span>
                 </a>
 
-                <a href="#" class="group flex items-center gap-4 bg-white/5 hover:bg-white/10 transition-colors rounded-3xl p-5">
+                <a href="#" class="group flex items-center gap-4 bg-dark-brown/5 hover:bg-dark-brown/10 transition-colors rounded-3xl p-5">
                     <span class="flex-1 text-right">
                         <span class="block label-text text-xs text-muted mb-1">Següent infografia</span>
-                        <span class="block card-heading-text text-lg text-white">Aigua Viva</span>
+                        <span class="block card-heading-text text-lg text-dark-brown">Aigua Viva</span>
                     </span>
                     <span class="w-16 h-14 rounded-xl bg-dark-brown shrink-0 overflow-hidden"></span>
-                    <span class="w-11 h-11 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-white transition-transform group-hover:translate-x-1">
+                    <span class="w-11 h-11 shrink-0 rounded-full border border-dark-brown/20 flex items-center justify-center text-dark-brown transition-transform group-hover:translate-x-1">
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </span>
                 </a>
