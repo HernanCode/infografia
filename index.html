@@ -25,10 +25,9 @@
     <link href="./css/styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-cream text-black-text font-body bg-noise antialiased relative min-h-screen">
+<body class="bg-[#f5e6bd] text-black-text font-body  antialiased relative min-h-screen">
     <!-- Organic Gradient Background -->
-    <div class="fixed inset-0 z-[-2] bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
-    <div class="fixed inset-0 z-[-1] topo-pattern opacity-80"></div>
+    <div class="fixed inset-0 z-[-2]]"></div>
     <!-- Logo i botó de menú, sempre visibles (transparents, sense barra) -->
     <div id="menu-controls"
         class="fixed top-10 md:top-12 left-0 right-0 z-50 mx-auto w-max flex items-center gap-4">
@@ -47,13 +46,11 @@
     <div id="fullscreen-menu" aria-hidden="true"
         class="menu-hidden fixed inset-0 z-40 flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
         <!-- Fons càlid igual que la resta de la pàgina -->
-        <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
-        <div class="absolute inset-0 -z-10 pointer-events-none topo-pattern opacity-80"></div>
+        <div class="absolute inset-0 -z-10 pointer-events-none bg-[#f5e6bd]"></div>
         <div class="absolute -top-24 -right-24 -z-10 w-96 h-96 rounded-full bg-primary-orange/20 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 -left-24 -z-10 w-80 h-80 rounded-full bg-gold/30 blur-3xl pointer-events-none"></div>
 
         <!-- Apartats del menú en gran -->
-        <div class="relative z-10 max-w-container-max mx-auto w-full my-auto pt-24 md:pt-28 py-8">
+        <div class="relative z-10 max-w-container-max mx-auto w-full my-auto py-8 md:pb-16">
             <nav class="flex flex-col gap-5 md:gap-7">
                 <a href="index.html"
                     class="menu-item group flex items-baseline justify-center gap-4 md:gap-6 text-dark-brown hover:text-primary-orange transition-colors duration-300">
@@ -83,23 +80,6 @@
         </div>
 
         <!-- Peu del menú -->
-        <div class="menu-footer relative z-10 max-w-container-max mx-auto w-full pt-8 border-t border-dark-brown/10 mt-6 pb-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div class="flex md:justify-center">
-                    <a href="contacte.html"
-                        class="inline-flex items-center gap-2 bg-primary-orange hover:bg-terracotta text-white rounded-full px-6 py-3 label-text transition-colors shadow-md">Vols
-                        organitzar una presentació?</a>
-                </div>
-                <div class="flex flex-col items-start md:items-end gap-1">
-                    <a href="privacitat.html"
-                        class="label-text text-xs text-dark-brown/60 hover:text-dark-brown transition-colors">Política de
-                        privacitat</a>
-                    <a href="cookies.html"
-                        class="label-text text-xs text-dark-brown/60 hover:text-dark-brown transition-colors">Política de
-                        cookies</a>
-                </div>
-            </div>
-        </div>
     </div>
     <main class="mx-auto relative">
         <!-- Hero Section -->
@@ -334,35 +314,34 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w-full relative overflow-hidden bg-cream/40 border-t border-dark-brown/10">
-<img src="./img/onades.png" alt="" class="absolute -bottom-20 -right-[280px] w-[1400px] opacity-[0.4] pointer-events-none rotate-[240deg]" aria-hidden="true">       <div class="absolute inset-0 topo-pattern opacity-80" aria-hidden="true"></div>
+    <footer class="w-full relative overflow-hidden bg-[#f5e6bd] border-t border-dark-brown/10">
+<img src="./img/onades.png" alt="" class="absolute -bottom-20 -right-[280px] w-[1400px] opacity-[0.4] pointer-events-none rotate-[240deg]" aria-hidden="true">       
         <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-14 md:py-20 relative z-10">
             <!-- Títol editorial amb presència -->
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-4 border-b border-dark-brown/10" data-animate>
                 <div class="space-y-4 max-w-3xl">
                     <h2 class="font-display font-bold text-dark-brown tracking-tight leading-none text-[clamp(2.25rem,1.3rem+4vw,4rem)]">
-                        <span class="block font-medium text-dark-brown/70 text-[clamp(1rem,0.7rem+1.4vw,1.5rem)] tracking-tight leading-snug mt-3">El sistema
+                        <span class="block font-medium text-dark-brown/70 text-[clamp(1rem,0.7rem+1.4vw,1.5rem)] tracking-tight leading-snug mt-3">Arran de terra. El sistema
                             alimentari català des de la sobirania alimentària.</span>
                     </h2>
                     <p class="caption-text text-dark-brown/70">3a edició dels <span class="font-semibold text-dark-brown">Indicadors de Sobirania Alimentària a Catalunya (2026)</span></p>
                 </div>
             </div>
-            <!-- Autoria, coordinació i logos -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 py-8" data-animate data-children data-stagger="0.15">
-                <div class="md:col-span-5 flex items-center gap-5 sm:gap-6">
-                    <a href="index.html"><img src="./img/logo.svg" alt="Arran de terra" class="h-8 md:h-9 w-auto"></a>
-                    <div class="w-px h-24 md:h-28 self-center bg-dark-brown/10" aria-hidden="true"></div>
-                    <img src="./img/faro.png" alt="Observatori FARO (UB)" class="h-24 md:h-28 w-auto">
+            <!-- Promotores i coordinació -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 py-5" data-animate data-children data-stagger="0.15">
+                <div class="md:col-span-12 xl:col-span-8">
+                    <p class="label-text label-text--sm text-dark-brown/60 mb-4">Promotores</p>
+                    <div class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-4">
+                        <a href="index.html" class="shrink-0"><img src="./img/logo.svg" alt="Arran de terra" class="h-9 lg:h-11 w-auto"></a>
+                        <div class="hidden sm:block w-px h-16 lg:h-20 self-center bg-dark-brown/15" aria-hidden="true"></div>
+                        <div class="relative shrink-0 overflow-hidden h-16 lg:h-20 aspect-[1886/594]">
+                            <img src="./img/faro.png" alt="Observatori FARO (UB)" class="absolute inset-0 h-full w-full object-cover object-center">
+                        </div>
+                    </div>
                 </div>
-                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:border-l md:border-dark-brown/10 md:pl-8">
-                    <div>
-                        <p class="label-text label-text--sm text-dark-brown/60 mb-1">Autoria</p>
-                        <p class="caption-text text-dark-brown">Arran de terra SCCL i Observatori FARO (UB)</p>
-                    </div>
-                    <div>
-                        <p class="label-text label-text--sm text-dark-brown/60 mb-1">Coordinació</p>
-                        <p class="caption-text text-dark-brown">Rosa Binimelis, Patricia Homs, Ana Moragues i Ana Pardo</p>
-                    </div>
+                <div class="md:col-span-12 xl:col-span-4">
+                    <p class="label-text label-text--sm text-dark-brown/60 mb-4">Coordinació</p>
+                    <p class="caption-text text-dark-brown"><span class="whitespace-nowrap">Rosa Binimelis,</span> <span class="whitespace-nowrap">Patricia Homs,</span> <span class="whitespace-nowrap">Ana Moragues</span> i <span class="whitespace-nowrap">Ana Pardo</span></p>
                 </div>
             </div>
             <!-- Barra legal -->
