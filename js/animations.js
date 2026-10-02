@@ -81,7 +81,7 @@
     let stackedDotsToggle = null;
     let stackedIsMobile = null;
 
-    function teardownStacked(page2, page3, track) {
+    function teardownStacked(page2, page3, track, section2, section3) {
         if (stackedTrigger) {
             stackedTrigger.kill();
             stackedTrigger = null;
@@ -99,20 +99,24 @@
             window.removeEventListener('resize', stackedDotsToggle);
             stackedDotsToggle = null;
         }
-        if (page2) gsap.set(page2, { opacity: 1, y: 0 });
-        if (page3) gsap.set(page3, { opacity: 1, y: 0 });
+        if (section2) section2.classList.remove('is-active');
+        if (section3) section3.classList.remove('is-active');
+        if (page2) gsap.set(page2, { opacity: 1, y: 0, 'pointer-events': 'auto' });
+        if (page3) gsap.set(page3, { opacity: 1, y: 0, 'pointer-events': 'auto' });
     }
 
     function setupStacked() {
         const stage = document.getElementById('stacked-stage');
         if (!stage) return;
 
+        const section2 = stage.querySelector('.stacked-2');
+        const section3 = stage.querySelector('.stacked-3');
         const page2 = stage.querySelector('.stacked-2 .stacked-page');
         const page3 = stage.querySelector('.stacked-3 .stacked-page');
         const track = stage.querySelector('.stacked-track');
-        if (!page2 || !page3) return;
+        if (!page2 || !page3 || !section2 || !section3) return;
 
-        teardownStacked(page2, page3, track);
+        teardownStacked(page2, page3, track, section2, section3);
         gsap.set(stage.querySelectorAll('[data-animate]'), { opacity: 1, y: 0 });
 
         const dots = stage.querySelectorAll('.stacked-dot');
@@ -125,7 +129,10 @@
         setSlide(1);
 
         if (stackedIsMobile) {
-            gsap.set(page3, { opacity: 1, y: 0 });
+            section2.classList.add('is-active');
+            section3.classList.remove('is-active');
+            gsap.set(page2, { opacity: 1, y: 0, 'pointer-events': 'auto' });
+            gsap.set(page3, { opacity: 1, y: 0, 'pointer-events': 'auto' });
 
             if (track && dots.length) {
                 stackedTrackListener = () => {
@@ -148,11 +155,27 @@
             return;
         }
 
-        gsap.set(page3, { opacity: 0, y: 40 });
+        section2.classList.add('is-active');
+        section3.classList.remove('is-active');
+        gsap.set(page2, { opacity: 1, y: 0, 'pointer-events': 'auto' });
+        gsap.set(page3, { opacity: 0, y: 40, 'pointer-events': 'none' });
 
         const tl = gsap.timeline({ paused: true });
-        tl.to(page2, { opacity: 0, y: -60, duration: 0.3, ease: 'power2.in' })
-          .to(page3, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' }, '+=0.2');
+        tl.to(page2, {
+            opacity: 0,
+            y: -60,
+            'pointer-events': 'none',
+            duration: 0.3,
+            ease: 'power2.in',
+            onComplete: () => section2.classList.remove('is-active'),
+        }).to(page3, {
+            opacity: 1,
+            y: 0,
+            'pointer-events': 'auto',
+            duration: 0.3,
+            ease: 'power3.out',
+            onStart: () => section3.classList.add('is-active'),
+        }, '+=0.2');
 
         // La transición se dispara de golpe al cruzar el punto de cambio, pero las
         // secciones quedan "bloqueadas" un tramo de scroll antes y después para que
