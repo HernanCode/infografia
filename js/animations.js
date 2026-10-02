@@ -23,26 +23,9 @@
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
         tl.from('.glass-panel', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 })
-          .from('.glass-float', { opacity: 0, scale: 0.5, duration: 0.6, stagger: 0.1 }, '-=0.6')
           .from('h1', { opacity: 0, y: -FALL_DISTANCE, duration: 1 }, '-=0.5')
           .from('.stacked-1 p', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.6')
-          .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5')
-          .from('#onda-left', {
-              x: -400,
-              y: 200,
-              opacity: 0,
-              rotation: '-=40',
-              duration: 1.4,
-              ease: 'power3.out'
-          }, '-=0.6')
-          .from('#onda-right', {
-              x: 400,
-              y: -200,
-              opacity: 0,
-              rotation: '+=40',
-              duration: 1.4,
-              ease: 'power3.out'
-          }, '-=1.2');
+          .from('.stacked-1 .flex.gap-4', { opacity: 0, y: -FALL_DISTANCE, duration: 0.8 }, '-=0.5');
     }
 
     function animateCtaOndas() {
@@ -278,15 +261,6 @@
         });
     }
 
-    function setupScrollDown() {
-        const btn = document.getElementById('scroll-down');
-        const stage = document.getElementById('stacked-stage');
-        if (!btn || !stage) return;
-        btn.addEventListener('click', () => {
-            stage.scrollIntoView({ behavior: 'smooth' });
-        });
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
         animateNavbar();
         animateHero();
@@ -294,6 +268,5 @@
         animateStackedTransition();
         animateScrollElements();
         animateTopoPattern();
-        setupScrollDown();
     });
 })();

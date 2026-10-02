@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ca" style>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" type="image/png" href="./img/arranico.png">
+    <title>Indicadors de Sobirania Alimentària a Catalunya | Arran de terra</title>
+    <meta name="description" content="Indicadors de Sobirania Alimentària a Catalunya">
+    <meta property="og:description" content="Dades per entendre el sistema alimentari català i obrir el debat sobre la transició agroecològica.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indicadors.arandeterra.cat/">
+    <meta property="og:locale" content="ca_ES">
+    <link rel="canonical" href="https://indicadors.arandeterra.cat/">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config" src="./js/tailwind.config.js"></script>
+    <link href="./css/styles1.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#f5e6bd] text-black-text font-body  antialiased relative min-h-screen">
+    <!-- Organic Gradient Background -->
+    <div class="fixed inset-0 z-[-2]"></div>
+    <!-- Nom del projecte i botó de menú, sempre visibles (transparents, sense barra) -->
+    <div id="menu-controls"
+        class="fixed top-10 md:top-12 left-0 right-0 z-50 px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto w-full relative flex items-center">
+            <a href="index.html" aria-label="Arran de terra — Inici"
+                class="block font-display uppercase leading-tight tracking-wide text-[clamp(1.1rem,1rem+0.4vw,1.6rem)] md:whitespace-nowrap"
+                style="max-width: calc(100% - 3.5rem)">
+                <span class="text-primary-orange">Arran de terra.</span>
+                <span class="text-muted">El sistema alimentari català des de la sobirania alimentària</span>
+            </a>
+            <button id="menu-toggle" aria-label="Obrir el menú" aria-expanded="false" aria-controls="fullscreen-menu"
+                class="burger-btn absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 shrink-0 rounded-full bg-white/60 hover:bg-white/80 active:scale-95 transition-all p-2.5 flex flex-col justify-center items-center gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange">
+            <span class="line-top block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+            <span class="line-mid block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-200"></span>
+            <span class="line-bot block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+        </button>
+        </div>
+    </div>
+
+    <!-- Menú a pantalla completa -->
+    <div id="fullscreen-menu" aria-hidden="true"
+        class="menu-hidden fixed inset-0 z-40 flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
+        <!-- Fons càlid igual que la resta de la pàgina -->
+        <div class="absolute inset-0 -z-10 pointer-events-none bg-[#f5e6bd]"></div>
+        <div class="absolute -top-24 -right-24 -z-10 w-96 h-96 rounded-full bg-primary-orange/20 blur-3xl pointer-events-none"></div>
+
+        <!-- Apartats del menú en gran -->
+        <div class="relative z-10 max-w-container-max mx-auto w-full my-auto py-8 md:pb-16">
+            <nav class="flex flex-col gap-5 md:gap-7">
+                <a href="index.html"
+                    class="menu-item group flex items-baseline justify-center gap-4 md:gap-6 text-dark-brown hover:text-primary-orange transition-colors duration-300">
+                    <span class="menu-num font-display text-sm md:text-xl text-primary-orange tracking-widest shrink-0">01</span>
+                    <span
+                        class="font-display uppercase font-bold tracking-tight leading-none text-[clamp(2.75rem,1.4rem+6vw,7.5rem)] group-hover:translate-x-3 transition-transform duration-300">INICI</span>
+                </a>
+                <a href="projectes.html"
+                    class="menu-item group flex items-baseline justify-center gap-4 md:gap-6 text-dark-brown hover:text-primary-orange transition-colors duration-300">
+                    <span class="menu-num font-display text-sm md:text-xl text-gold tracking-widest shrink-0">02</span>
+                    <span
+                        class="font-display uppercase font-bold tracking-tight leading-none text-[clamp(2.75rem,1.4rem+6vw,7.5rem)] group-hover:translate-x-3 transition-transform duration-300">INFOGRAFIES</span>
+                </a>
+                <a href="index.html"
+                    class="menu-item group flex items-baseline justify-center gap-4 md:gap-6 text-dark-brown hover:text-primary-orange transition-colors duration-300">
+                    <span class="menu-num font-display text-sm md:text-xl text-primary-orange tracking-widest shrink-0">03</span>
+                    <span
+                        class="font-display uppercase font-bold tracking-tight leading-none text-[clamp(2.75rem,1.4rem+6vw,7.5rem)] group-hover:translate-x-3 transition-transform duration-300">SOBRE EL PROJECTE</span>
+                </a>
+                <a href="contacte.html"
+                    class="menu-item group flex items-baseline justify-center gap-4 md:gap-6 text-dark-brown hover:text-primary-orange transition-colors duration-300">
+                    <span class="menu-num font-display text-sm md:text-xl text-green tracking-widest shrink-0">04</span>
+                    <span
+                        class="font-display uppercase font-bold tracking-tight leading-none text-[clamp(2.75rem,1.4rem+6vw,7.5rem)] group-hover:translate-x-3 transition-transform duration-300">PRESENTACIONS</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Peu del menú -->
+    </div>
+    <main class="mx-auto relative">
+        <!-- Hero Section -->
+        <section
+            class="stacked stacked-1 flex flex-col items-start justify-center text-left relative px-margin-mobile md:px-margin-desktop">
+            <!-- Decorative rings + floating icons -->
+            <div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
+                <div class="hero-rings"></div>
+
+                <!-- Floating icons around rings -->
+                <div class="hero-float-icons">
+                    <div class="hero-float-icon" style="--hf-delay: 0.2s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">eco</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 0.4s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">agriculture</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 0.6s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">terrain</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 0.8s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">water_drop</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Content -->
+            <div class="max-w-container-max mx-auto w-full relative z-10">
+                <div class="w-full max-w-[840px]">
+                <p class="label-text label-text--sm text-dark-brown/70 mb-4">3a edició · 2026</p>
+                <h1
+                    class="heading-text mb-8 max-w-4xl drop-shadow-sm md:leading-tight text-balance text-left"
+                    style="text-wrap: balance">
+                    Indicadors de Sobirania Alimentària a Catalunya</h1>
+                <p class="label-text mb-12 max-w-2xl">
+                    Dades per entendre el sistema alimentari català i obrir el debat sobre la transició agroecològica.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-start items-start label-text--sm">
+                    <a href="projectes.html"
+                        class="bg-primary-orange text-white rounded-full pl-2 pr-6 py-2 label-text flex items-center gap-3 hover:scale-105 transition-transform shadow-lg glow-hover">
+                        <span class="bg-white/20 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">explore</span>
+                        </span>
+                        Explora Infografies
+                    </a>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- Dades i coneixement del Territori Section -->
+        <div id="stacked-stage">
+        <div class="sticky-wrapper bg-black-text ">
+        <div class="stacked-track">
+        <section
+            class="stacked stacked-2 relative overflow-hidden w-full">
+            <div class="stacked-page w-full flex flex-col justify-center py-6 px-margin-mobile md:px-margin-desktop">
+                <div class="max-w-container-max mx-auto relative z-10 w-full stacked-content">
+                <div class="mb-20" data-animate>
+                    <h2 class="heading-text heading-text--light">
+                        <span class="text-white block">DADES I CONEIXEMENT</span>
+                        <span class="text-primary-orange">DEL TERRITORI</span>
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mb-4" data-animate data-children data-stagger="0.15">
+                    <div class="flex gap-4 mb-10">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-dark-brown flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold text-3xl font-light">history</span>
+                        </div>
+                        <div>
+                            <h3 class="subheading-text text-white mb-1">Tres edicions, un mateix compromís
+                            </h3>
+                            <p class="body-text body-text--dark">2011, 2018 i 2026: gairebé quinze anys mesurant l'evolució del sistema alimentari català.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-dark-brown flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-gold text-3xl font-light">groups</span>
+                        </div>
+                        <div>
+                            <h3 class="subheading-text text-white mb-1">Impulsat des del territori i la universitat</h3>
+                            <p class="body-text body-text--dark">Arran de terra SCCL i l'Observatori FARO (UB) uneixen força en aquesta nova fase.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-dark-brown flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold text-3xl font-light">description</span>
+                        </div>
+                        <div>
+                            <h3 class="subheading-text text-white mb-1">Dades pensades per compartir-se
+                            </h3>
+                            <p class="body-text body-text--dark">Pòsters infogràfics per temàtica i materials digitals ampliats, fets per fer-se servir.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 shrink-0 rounded-2xl bg-dark-brown flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold text-3xl font-light">forum</span>
+                        </div>
+                        <div>
+                            <h3 class="subheading-text text-white mb-1">Evidències per obrir el debat
+                            </h3>
+                            <p class="body-text body-text--dark">Dades per entendre el sistema alimentari català i impulsar la transició agroecològica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Projectes i solucions Section -->
+        <section
+            class="stacked stacked-3 relative overflow-hidden w-full">
+            <div class="stacked-page w-full flex flex-col justify-center py-6 px-margin-mobile md:px-margin-desktop">
+                <div class="max-w-container-max mx-auto relative z-10 w-full stacked-content">
+                <!-- Header -->
+                <div class="mb-20" data-animate>
+                    <h2 class="heading-text heading-text--light">
+                        <span class="text-white block">INFOGRAFIES</span>
+                    </h2>
+                </div>
+                <!-- Grid -->
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-5 md:mb-6" data-animate data-children data-stagger="0.2">
+                    <!-- Project 1 -->
+                    <a href="infografia.html" class="group block">
+                
+                        <div class="flex md:block items-center gap-4">
+                            <div
+                                class="relative w-16 h-16 shrink-0 md:w-full md:h-auto md:aspect-[16/10] rounded-2xl md:rounded-3xl bg-dark-brown md:mb-3 overflow-hidden transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                                <img src="./img/Thumnail.jpg" alt="Cóm es la producció ramadera"
+                                    class="absolute inset-0 w-full h-full object-cover">
+                                <h3 class="card-heading-text card-heading-text--desktop text-white text-center px-4">Cóm es la producció ramadera</h3>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="card-heading-text card-heading-text--mobile text-white mb-0.5">Cóm es la producció ramadera</h3>
+                                <p class="subheading-text text-white mb-1">Cóm es la producció ramadera</p>
+                            </div>
+</div>
+                  
+                    </a>
+                    <!-- Project 2 -->
+                     
+<a href="infografia-g.html" class="group block">
+    
+                        <div class="flex md:block items-center gap-4">
+                            <div
+                                class="w-16 h-16 shrink-0 md:w-full md:h-auto md:aspect-[16/10] rounded-2xl md:rounded-3xl bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 md:mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                                <span class="material-symbols-outlined text-black-text text-3xl md:hidden">eco</span>
+                                <h3 class="card-heading-text card-heading-text--desktop text-black-text text-center px-4">Ecosistemes</h3>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="card-heading-text card-heading-text--mobile text-white mb-0.5">Ecosistemes</h3>
+                                <p class="subheading-text text-white mb-1">Anàlisi de biodiversitat en zones de pastura</p>
+                            </div>
+                        </div>
+            
+                    </a>
+                    <!-- Project 3 -->
+                    <a href="infografia-g.html" class="group block">
+
+                        <div class="flex md:block items-center gap-4">
+                            <div
+                                class="w-16 h-16 shrink-0 md:w-full md:h-auto md:aspect-[16/10] rounded-2xl md:rounded-3xl bg-white md:mb-3 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                                <span class="material-symbols-outlined text-black-text text-3xl md:hidden">water_drop</span>
+                                <h3 class="card-heading-text card-heading-text--desktop text-black-text text-center px-4">Aigua Viva</h3>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="card-heading-text card-heading-text--mobile text-white mb-0.5">Aigua Viva</h3>
+                                <p class="subheading-text text-white mb-1">Gestió eficient dels recursos hídrics</p>
+                            </div>
+                        </div>
+                
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section> 
+
+        <div class="stacked-cta absolute bottom-20 left-0 right-0 flex flex-col items-center gap-2 z-20 px-margin-mobile md:px-margin-desktop">
+            <a href="projectes.html"
+                class="border-2 border-white/20 text-white rounded-full px-6 py-2 label-text flex items-center gap-4 hover:bg-white/5 transition-all">
+                Veure infografies
+            </a>
+        </div>
+
+        <div class="stacked-dots absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-3">
+            <span class="stacked-dot w-2.5 h-2.5 rounded-full bg-primary-orange"></span>
+            <span class="stacked-dot w-2.5 h-2.5 rounded-full bg-muted"></span>
+        </div>
+        </div>
+        </div>
+        <!-- Projects Grid (Existing) -->
+    </main>
+
+    <!-- CTA Stage (slides over the infografies section, replicating hero->section) -->
+    <div id="cta-stage">
+        <div class="sticky-wrapper bg-dark-brown">
+            <section class="stacked stacked-4 relative overflow-hidden w-full">
+                <!-- Floating Decorative Elements -->
+                <div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
+                    <!-- Node 1 -->
+                    <!-- Ondas decorativas -->
+                    <img id="cta-onda-left" class="hero-onda onda-left" src="./img/onades.png" alt="" style="opacity:0.8">
+                    <img id="cta-onda-right" class="hero-onda onda-right" src="./img/onades.png" alt="" style="opacity:0.8;">
+                    <!-- Glow central -->
+                
+                </div>
+                <div class="stacked-page w-full flex flex-col justify-center py-28 px-margin-mobile md:px-margin-desktop">
+                    <div class="max-w-container-max mx-auto flex flex-col items-center text-center gap-6 relative z-10" data-animate data-children data-stagger="0.12">
+                        <h2 class="heading-text heading-text--light text-white max-w-3xl">
+                            Vols organitzar una presentació?
+                        </h2>
+                        <p class="body-text body-text--onbrown max-w-2xl">
+                            Omple el formulari de la pàgina de contacte i ens posarem en contacte amb tu per organitzar una presentació.
+                        </p>
+                        <a href="contacte.html"
+                            class="mt-2 inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-8 py-3 label-text transition-colors shadow-md">
+                            Vés al formulari
+                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full relative overflow-hidden bg-[#f5e6bd] border-t border-dark-brown/10">
+<img src="./img/onades.png" alt="" class="absolute -bottom-20 -right-[280px] w-[1400px] opacity-[0.4] pointer-events-none rotate-[240deg]" aria-hidden="true">       
+        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-14 md:py-20 relative z-10">
+            <!-- Títol editorial amb presència -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-4 border-b border-dark-brown/10" data-animate>
+                <div class="space-y-4 max-w-3xl">
+                    <h2 class="font-display font-bold text-dark-brown tracking-tight leading-none text-[clamp(2.25rem,1.3rem+4vw,4rem)]">
+                        <span class="block font-medium text-dark-brown/70 text-[clamp(1rem,0.7rem+1.4vw,1.5rem)] tracking-tight leading-snug mt-3">Arran de terra. El sistema
+                            alimentari català des de la sobirania alimentària.</span>
+                    </h2>
+                    <p class="caption-text text-dark-brown/70">3a edició dels <span class="font-semibold text-dark-brown">Indicadors de Sobirania Alimentària a Catalunya (2026)</span></p>
+                </div>
+            </div>
+            <!-- Promotores i coordinació -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 py-5" data-animate data-children data-stagger="0.15">
+                <div class="md:col-span-12 xl:col-span-8">
+                    <p class="label-text label-text--sm text-dark-brown/60 mb-4">Promotores</p>
+                    <div class="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-4">
+                        <a href="index.html" class="shrink-0"><img src="./img/logo.svg" alt="Arran de terra" class="h-9 lg:h-11 w-auto"></a>
+                        <div class="hidden sm:block w-px h-16 lg:h-20 self-center bg-dark-brown/15" aria-hidden="true"></div>
+                        <div class="relative shrink-0 overflow-hidden h-16 lg:h-20 aspect-[1886/594]">
+                            <img src="./img/faro.png" alt="Observatori FARO (UB)" class="absolute inset-0 h-full w-full object-cover object-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-12 xl:col-span-4">
+                    <p class="label-text label-text--sm text-dark-brown/60 mb-4">Coordinació</p>
+                    <p class="caption-text text-dark-brown"><span class="whitespace-nowrap">Rosa Binimelis,</span> <span class="whitespace-nowrap">Patricia Homs,</span> <span class="whitespace-nowrap">Ana Moragues</span> i <span class="whitespace-nowrap">Ana Pardo</span></p>
+                </div>
+            </div>
+            <!-- Barra legal -->
+            <div class="pt-6 border-t border-dark-brown/10 flex flex-col sm:flex-row items-center justify-between gap-3 caption-text text-dark-brown/60" data-animate>
+                <span>© 2026 Arran de terra · Tots els drets reservats</span>
+                <div class="flex items-center gap-3">
+                    <a href="privacitat.html" class="hover:text-primary-orange transition-colors">Política de privacitat</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="cookies.html" class="hover:text-primary-orange transition-colors">Política de cookies</a>
+                </div>
+                <span>web by <a href="https://cabra.design" class="font-medium text-dark-brown hover:text-primary-orange transition-colors" rel="noopener noreferrer" target="_blank">cabra.design</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <style type="text/tailwindcss">
+        /* ============================================
+           SISTEMA TIPOGRÀFIC — 4 estils base
+           Reutilitza aquestes classes a tot arreu en
+           lloc de combinar mides/pesos/majúscules sobre
+           la marxa a cada element.
+           ============================================ */
+        @layer components {
+
+            /* 1. TÍTOL (display) — H1 de l'hero i H2 de secció.
+               Mateixa família (font-display), majúscules i
+               interlineat sempre; l'hero (--hero, implícit per
+               defecte) és un punt més gran que els H2 de secció
+               (--light) per marcar la jerarquia sense sortir
+               del sistema. */
+            .heading-text {
+                @apply font-display uppercase leading-tight text-4xl md:text-7xl;
+            }
+            .heading-text--light {
+                @apply font-display uppercase leading-tight text-4xl md:text-6xl;
+            }
+
+            /* 2. SUBTÍTOL — H3 de característiques i peus de
+               targeta ("Pantalla interactiva..."). Sense
+               majúscules, semibold, sempre la mateixa mida. */
+            .subheading-text {
+                @apply font-body font-semibold text-xl leading-snug;
+            }
+
+            /* 2b. Variant només per als noms grans dins les
+               targetes d'infografies: fan de "mini titular", per
+               això comparteixen tractament amb .heading-text
+               però en una mida més petita i responsive. */
+            .card-heading-text {
+                @apply font-display uppercase leading-tight;
+            }
+            .card-heading-text--desktop {
+                @apply hidden md:block text-2xl;
+            }
+            .card-heading-text--mobile {
+                @apply block md:hidden text-lg;
+            }
+
+            /* 3. TEXT DE COS — tots els paràgrafs de suport.
+               Sempre light + leading-relaxed; només canvia el
+               color segons si va sobre fons clar, fosc o marró. */
+            .body-text {
+                @apply font-body font-light text-base md:text-lg leading-relaxed text-dark-brown;
+            }
+            .body-text--dark {
+                @apply text-muted;
+            }
+            .body-text--onbrown {
+                @apply text-white/80;
+            }
+
+            /* 4. ETIQUETA (eyebrow / botons / nav) — sempre
+               majúscules, semibold, tracking ample. Només varia
+               la mida (sm per defecte, xs per a etiquetes
+               secundàries com el peu de pàgina). */
+            .label-text {
+                @apply font-body font-semibold uppercase tracking-widest text-sm;
+            }
+
+            /* Text de crèdits al peu — mateixa família que el
+               cos, un punt per sota perquè és informació
+               secundària (copyright, autoria). */
+            .caption-text {
+                @apply font-body font-light text-sm text-dark-brown;
+            }
+        }
+    </style>
+
+    <!-- Estils del botó hamburguesa i el menú a pantalla completa -->
+    <style>
+        .burger-btn.is-active .line-top {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .burger-btn.is-active .line-mid {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .burger-btn.is-active .line-bot {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        #site-header {
+            will-change: opacity, transform;
+        }
+
+        #fullscreen-menu {
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #fullscreen-menu.menu-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #fullscreen-menu.menu-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 767.98px) {
+            #fullscreen-menu .menu-item {
+                justify-content: flex-start;
+                text-align: left;
+            }
+            #fullscreen-menu .menu-item span:last-child {
+                text-align: left;
+            }
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        (() => {
+            if (typeof gsap === 'undefined') return;
+
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('fullscreen-menu');
+            if (!toggle || !menu) return;
+
+            const items = Array.from(menu.querySelectorAll('.menu-item'));
+            const footer = menu.querySelector('.menu-footer');
+            let open = false;
+
+            function animateIn() {
+                const tl = gsap.timeline({ defaults: { ease: 'power3.out', overwrite: true } });
+                tl.fromTo(items, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.7, stagger: 0.1 })
+                    .fromTo(footer, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
+            }
+
+            function animateOut() {
+                gsap.set(items, { opacity: 0, y: 50 });
+                gsap.set(footer, { opacity: 0, y: 24 });
+            }
+
+            function lockScroll(lock) {
+                document.body.style.overflow = lock ? 'hidden' : '';
+                document.documentElement.style.overflow = lock ? 'hidden' : '';
+                document.body.style.overflowX = lock ? 'hidden' : '';
+                document.documentElement.style.overflowX = lock ? 'hidden' : '';
+            }
+
+            function setOpen(next) {
+                open = next;
+                menu.classList.toggle('menu-open', open);
+                menu.classList.toggle('menu-hidden', !open);
+                menu.setAttribute('aria-hidden', String(!open));
+                toggle.classList.toggle('is-active', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                lockScroll(open);
+                if (open) animateIn(); else animateOut();
+            }
+
+            toggle.addEventListener('click', () => setOpen(!open));
+            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+            window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+        })();
+    </script>
+    <script src="./js/header.js"></script>
+    <script src="./js/animations.js"></script>
+</body>
+
+</html>

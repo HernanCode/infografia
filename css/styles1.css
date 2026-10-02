@@ -1,0 +1,553 @@
+        html,
+        body {
+            overflow-x: clip;
+            max-width: 100%;
+        }
+        html {
+            scrollbar-gutter: stable;
+        }
+        [data-animate] {
+            opacity: 0;
+        }
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .topo-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q 25 25, 50 50 T 100 50' fill='none' stroke='rgba(75, 66, 56, 0.05)' stroke-width='1'/%3E%3Cpath d='M0 70 Q 25 45, 50 70 T 100 70' fill='none' stroke='rgba(75, 66, 56, 0.03)' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        .topo-pattern-light {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q 25 25, 50 50 T 100 50' fill='none' stroke='rgba(255, 255, 255, 0.03)' stroke-width='1'/%3E%3Cpath d='M0 70 Q 25 45, 50 70 T 100 70' fill='none' stroke='rgba(255, 255, 255, 0.02)' stroke-width='1'/%3E%3Cpath d='M0 30 Q 25 55, 50 30 T 100 30' fill='none' stroke='rgba(255, 255, 255, 0.02)' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        
+/* ============================================
+   AROS DEL HERO + ICONES: GEOMETRIA COMPARTIDA
+   Els dos contenidors fan servir exactament la mateixa
+   caixa i transform; així el centre és el mateix.
+   ============================================ */
+:root {
+    --hero-ring-size: 140vh;   /* costat de la caixa quadrada */
+    --hero-ring-sx: 1;         /* 1 = cercles; 1.2 = el·lipses */
+    /* radi del gradient (circle, farthest-corner) = meitat de la diagonal */
+    --hero-ring-r: calc(var(--hero-ring-size) * 0.7071);
+}
+
+.hero-rings,
+.hero-float-icons {
+    position: absolute;
+    top: 50%;
+    right: -60vh;
+    left: auto;
+    width: var(--hero-ring-size);
+    height: var(--hero-ring-size);
+    transform: translateY(-50%) scaleX(var(--hero-ring-sx));
+    transform-origin: center center;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-rings {
+    background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        transparent 12%,
+        #D9956A 12%,
+        #D9956A 18%,
+        transparent 18%,
+        transparent 26%,
+        #E8B89A 26%,
+        #E8B89A 32%,
+        transparent 32%,
+        transparent 40%,
+        #FDF6E3 40%,
+        #FDF6E3 46%,
+        transparent 46%,
+        transparent 54%,
+        #FFFFFF 54%,
+        #FFFFFF 60%,
+        transparent 60%
+    );
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --hero-ring-size: 45vh;
+        --hero-ring-sx: 1.15;
+    }
+    .hero-rings,
+    .hero-float-icons {
+        top: auto;
+        bottom: -30vh;
+        right: -20vh;
+        transform: scaleX(var(--hero-ring-sx));
+    }
+    .hero-rings {
+        opacity: 0.4;
+    }
+}
+
+.glow-hover:hover {
+    box-shadow: 0 0 40px 10px rgba(242, 109, 51, 0.2);
+}
+
+section.stacked {
+    position: sticky ;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#stacked-stage {
+    position: relative;
+    height: 500vh;
+    z-index: 2;
+}
+
+#stacked-stage .sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.stacked-track {
+    position: relative;
+    height: 100%;
+}
+
+.stacked-track section.stacked {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1;
+}
+
+.stacked-track section.stacked.is-active {
+    z-index: 2;
+}
+
+.stacked-track .stacked-page {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform, opacity;
+    z-index: 1;
+}
+
+.stacked-track section.stacked.is-active .stacked-page {
+    z-index: 2;
+}
+
+.stacked-track .stacked-3 .stacked-page { opacity: 0; }
+
+.stacked-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8vh;
+}
+
+@media (max-width: 767.98px) {
+    section.stacked.stacked-1,
+    section.stacked.stacked-2,
+    section.stacked.stacked-3 {
+        position: relative !important;
+        top: auto;
+        height: auto;
+    }
+    section.stacked.stacked-1 {
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    #stacked-stage {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+    #stacked-stage .sticky-wrapper {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .stacked-track {
+        position: relative;
+        flex: 0 0 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .stacked-track section.stacked {
+        position: relative !important;
+        left: auto;
+        right: auto;
+        top: auto;
+        flex: 0 0 100vw;
+        min-width: 100vw;
+        width: 100vw;
+        height: auto;
+        min-height: 80vh;
+        overflow-y: auto;
+        scroll-snap-align: start;
+    }
+    .stacked-track .stacked-page {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .stacked-track .stacked-3 .stacked-page {
+        opacity: 1;
+    }
+    .stacked-content {
+        min-height: 0;
+        margin: 10vh auto;
+        padding-top: 0;
+        max-width: 100%;
+    }
+    .stacked-track section.stacked .stacked-content > div {
+        width: 100%;
+    }
+    .stacked-track .stacked-page .w-16 {
+        width: 2.625rem;
+        height: 2.625rem;
+        border-radius: 0.75rem;
+    }
+    .stacked-track .stacked-page .text-3xl {
+        font-size: 1.25rem;
+    }
+    .stacked-track section.stacked h3 {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+    .stacked-track section.stacked p {
+        font-size: 0.8125rem;
+        line-height: 1.45;
+    }
+    .stacked-track .grid {
+        gap: 1rem 1.5rem;
+    }
+    .stacked-track section.stacked h2 {
+        font-size: 2.25rem;
+        line-height: 1.05;
+        margin-bottom: 1.25rem;
+    }
+    #stacked-stage .stacked-cta {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 0 2.75rem;
+        background: #221F1F;
+    }
+    #stacked-stage .stacked-dots {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 30;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    #stacked-stage .stacked-dots.in-view {
+        opacity: 1;
+        visibility: visible;
+    }
+    #cta-stage {
+        position: relative;
+        height: auto;
+        z-index: 3;
+        margin-top: 0;
+    }
+    #cta-stage .sticky-wrapper {
+        position: relative;
+        height: auto;
+        overflow: hidden;
+    }
+    #cta-stage section.stacked {
+        position: relative;
+        height: auto;
+    }
+    #cta-stage .stacked-page {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.stacked-1 { z-index: 1; }
+.stacked-2 { z-index: 2; }
+.stacked-3 { z-index: 3; }
+.stacked-4 { z-index: 4; }
+
+.stacked-dot.bg-primary-orange {
+    box-shadow: 0 0 8px 2px rgba(242, 109, 51, 0.8), 0 0 18px 5px rgba(242, 109, 51, 0.35);
+    animation: stacked-dot-glow 1.6s ease-in-out infinite;
+}
+
+@keyframes stacked-dot-glow {
+    0%, 100% { box-shadow: 0 0 6px 2px rgba(242, 109, 51, 0.6), 0 0 14px 4px rgba(242, 109, 51, 0.25); }
+    50% { box-shadow: 0 0 12px 4px rgba(242, 109, 51, 1), 0 0 24px 8px rgba(242, 109, 51, 0.45); }
+}
+
+@media (min-width: 768px) {
+    #cta-stage {
+        position: relative;
+        height: 200vh;
+        z-index: 3;
+        margin-top: -100vh;
+    }
+
+    #cta-stage .sticky-wrapper {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #cta-stage section.stacked {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+    }
+
+    #cta-stage .stacked-page {
+        position: relative;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        will-change: transform, opacity;
+    }
+}
+
+header.topbar {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+header.topbar .nav-link,
+header.topbar .nav-brand,
+header.topbar { color: #4B4238; }
+header.topbar--transparent {
+    background: transparent;
+    backdrop-filter: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+header.topbar--transparent .nav-link,
+header.topbar--transparent .nav-brand {
+    color: #fff;
+}
+header.topbar--transparent .nav-link:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.hero-onda {
+    position: absolute;
+    width: 480px;
+    height: auto;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 8px 24px rgba(75, 66, 56, 0.12));
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 0;
+    transform-origin: center center;
+}
+
+.onda-left {
+    bottom: -140px;
+    left: -140px;
+    transform: rotate(20deg);
+}
+
+.onda-right {
+    top: -140px;
+    right: -140px;
+    transform: rotate(200deg); /* -35 + 180 */
+}
+
+@media (min-width: 768px) {
+    .hero-onda {
+        width: 1200px;
+    }
+    .onda-left {
+        bottom: -300px;
+        left: -300px;
+    }
+    .onda-right {
+        top: -300px;
+        right: -300px;
+    }
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+form input:focus,
+form textarea:focus {
+    --tw-ring-color: #4B4238;
+    border-color: #4B4238;
+}
+
+/* ============================================
+   ICONES FLOTANTS AL VOLTANT DELS AROS DEL HERO
+   ============================================ */
+
+.glass-float {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 4px 20px rgba(75, 66, 56, 0.12),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/* El wrapper comparteix geometria amb .hero-rings (regla de dalt). */
+.hero-float-icons {
+    z-index: 5;
+}
+
+/* Coordenades polars des del centre dels aros:
+   rotate(angle) -> translateX(radi) -> rotate(-angle) -> desfer l'escala X */
+.hero-float-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    opacity: 0;
+    transform:
+        rotate(var(--hf-angle))
+        translateX(calc(var(--hf-radius) * var(--hero-ring-r)))
+        rotate(calc(-1 * var(--hf-angle)))
+        scaleX(calc(1 / var(--hero-ring-sx)));
+    transform-origin: center center;
+    animation: hero-float-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--hf-delay);
+}
+
+/* --hf-radius = punt mig de cada aro (fracció del radi del gradient):
+   0.15 = 1r aro (marró), 0.29 = 2n, 0.43 = 3r, 0.57 = 4t (blanc).
+   --hf-angle: 180deg = cap a l'esquerra; <180 baixa, >180 puja. */
+.hero-float-icon:nth-child(1) { --hf-angle: 200deg; --hf-radius: 0.15; --hf-delay: 0.2s; }
+.hero-float-icon:nth-child(2) { --hf-angle: 150deg; --hf-radius: 0.29; --hf-delay: 0.4s; }
+.hero-float-icon:nth-child(3) { --hf-angle: 215deg; --hf-radius: 0.43; --hf-delay: 0.6s; }
+.hero-float-icon:nth-child(4) { --hf-angle: 145deg; --hf-radius: 0.43; --hf-delay: 0.8s; } /* gota */
+/* Cercle interior amb icona Material */
+.hero-float-icon__inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-float-icon__inner .material-symbols-outlined {
+    font-size: 1.625rem;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.hero-float-icon:hover .hero-float-icon__inner,
+.hero-float-icon:focus-visible .hero-float-icon__inner {
+    background: rgba(255, 255, 255, 0.85);
+    transform: scale(1.12);
+    box-shadow:
+        0 6px 24px rgba(242, 109, 51, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/* Animació d'entrada escalonada */
+@keyframes hero-float-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Oscil·lació suau (només si l'usuari no ha reduït el moviment) */
+@media (prefers-reduced-motion: no-preference) {
+    .hero-float-icon__inner {
+        animation: hero-float-bob 5s ease-in-out infinite;
+        animation-delay: calc(var(--hf-delay) + 0.8s);
+    }
+}
+
+@keyframes hero-float-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Respects prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-float-icon {
+        animation: none;
+        opacity: 1;
+    }
+    .hero-float-icon__inner {
+        animation: none;
+    }
+}
+
+/* Ajustos per a mòbil (la geometria ja la porten les variables) */
+@media (max-width: 768px) {
+    .hero-float-icon {
+        width: 48px;
+        height: 48px;
+        margin: -24px 0 0 -24px;
+    }
+
+    /* El centre dels aros queda a la cantonada inferior dreta:
+       només es veu el quadrant superior esquerre (angles 180-270). */
+    .hero-float-icon:nth-child(1) { --hf-angle: 225deg; }
+    .hero-float-icon:nth-child(2) { --hf-angle: 200deg; }
+    .hero-float-icon:nth-child(3) { --hf-angle: 245deg; }
+    .hero-float-icon:nth-child(4) { --hf-angle: 215deg; }
+
+    .hero-float-icon__inner .material-symbols-outlined {
+        font-size: 1.375rem;
+    }
+
+    @keyframes hero-float-bob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+}
