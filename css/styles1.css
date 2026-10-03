@@ -461,17 +461,40 @@ form textarea:focus {
         rotate(calc(-1 * var(--hf-angle)))
         scaleX(calc(1 / var(--hero-ring-sx)));
     transform-origin: center center;
-    animation: hero-float-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: var(--hf-delay);
+animation:
+        hero-float-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        hero-orbit var(--hf-duration, 40s) linear infinite;
+    animation-delay: var(--hf-delay), 0s;
+
+}
+
+@keyframes hero-orbit {
+    from {
+        transform:
+            rotate(var(--hf-angle))
+            translateX(calc(var(--hf-radius) * var(--hero-ring-r)))
+            rotate(calc(-1 * var(--hf-angle)))
+            scaleX(calc(1 / var(--hero-ring-sx)));
+    }
+    to {
+        transform:
+            rotate(calc(var(--hf-angle) + var(--hf-spin, 360deg)))
+            translateX(calc(var(--hf-radius) * var(--hero-ring-r)))
+            rotate(calc(-1 * (var(--hf-angle) + var(--hf-spin, 360deg))))
+            scaleX(calc(1 / var(--hero-ring-sx)));
+    }
 }
 
 /* --hf-radius = punt mig de cada aro (fracció del radi del gradient):
    0.15 = 1r aro (marró), 0.29 = 2n, 0.43 = 3r, 0.57 = 4t (blanc).
    --hf-angle: 180deg = cap a l'esquerra; <180 baixa, >180 puja. */
-.hero-float-icon:nth-child(1) { --hf-angle: 200deg; --hf-radius: 0.15; --hf-delay: 0.2s; }
-.hero-float-icon:nth-child(2) { --hf-angle: 150deg; --hf-radius: 0.29; --hf-delay: 0.4s; }
-.hero-float-icon:nth-child(3) { --hf-angle: 215deg; --hf-radius: 0.43; --hf-delay: 0.6s; }
-.hero-float-icon:nth-child(4) { --hf-angle: 145deg; --hf-radius: 0.43; --hf-delay: 0.8s; } /* gota */
+.hero-float-icon:nth-child(1) { --hf-angle: 200deg; --hf-radius: 0.15; --hf-delay: 0.1s; }
+.hero-float-icon:nth-child(2) { --hf-angle: 150deg; --hf-radius: 0.29; --hf-delay: 0.2s; }
+.hero-float-icon:nth-child(3) { --hf-angle: 215deg; --hf-radius: 0.30; --hf-delay: 0.3s; }
+.hero-float-icon:nth-child(4) { --hf-angle: 145deg; --hf-radius: 0.43; --hf-delay: 0.4s; } /* gota */
+.hero-float-icon:nth-child(5) { --hf-angle: 250deg; --hf-radius: 0.43; --hf-delay: 0.5s; }
+.hero-float-icon:nth-child(6) { --hf-angle: 300deg; --hf-radius: 0.43; --hf-delay: 0.6s; } /* gota */
+
 /* Cercle interior amb icona Material */
 .hero-float-icon__inner {
     width: 100%;
