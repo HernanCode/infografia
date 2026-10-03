@@ -81,18 +81,19 @@
 
 @media (max-width: 768px) {
     :root {
-        --hero-ring-size: 45vh;
-        --hero-ring-sx: 1.15;
+        --hero-ring-size: 65vh;
+        --hero-ring-sx: 1;
     }
     .hero-rings,
     .hero-float-icons {
-        top: auto;
-        bottom: -30vh;
-        right: -20vh;
-        transform: scaleX(var(--hero-ring-sx));
+        top: 50%;
+        right: -30vh;
+        left: auto;
+        bottom: auto;
+        transform: translateY(-50%);
     }
     .hero-rings {
-        opacity: 0.4;
+        opacity: 0.55;
     }
 }
 
@@ -558,12 +559,15 @@ animation:
         margin: -24px 0 0 -24px;
     }
 
-    /* El centre dels aros queda a la cantonada inferior dreta:
-       només es veu el quadrant superior esquerre (angles 180-270). */
-    .hero-float-icon:nth-child(1) { --hf-angle: 225deg; }
-    .hero-float-icon:nth-child(2) { --hf-angle: 200deg; }
-    .hero-float-icon:nth-child(3) { --hf-angle: 245deg; }
-    .hero-float-icon:nth-child(4) { --hf-angle: 215deg; }
+    /* El centre dels aros queda a la dreta del text, a mitja alçada.
+       Els 6 icones es reparteixen per tot el cercle (separats 60?)
+       i giren en sentit horari, com a escriptori. */
+    .hero-float-icon:nth-child(1) { --hf-angle: 210deg; --hf-radius: 0.20; }
+    .hero-float-icon:nth-child(2) { --hf-angle: 270deg; --hf-radius: 0.34; }
+    .hero-float-icon:nth-child(3) { --hf-angle: 330deg; --hf-radius: 0.28; }
+    .hero-float-icon:nth-child(4) { --hf-angle: 30deg;  --hf-radius: 0.44; }
+    .hero-float-icon:nth-child(5) { --hf-angle: 90deg;  --hf-radius: 0.38; }
+    .hero-float-icon:nth-child(6) { --hf-angle: 150deg; --hf-radius: 0.48; }
 
     .hero-float-icon__inner .material-symbols-outlined {
         font-size: 1.375rem;
