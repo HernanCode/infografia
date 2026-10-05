@@ -32,7 +32,7 @@
     <div id="menu-controls"
         class="fixed top-10 md:top-12 left-0 right-0 z-50 px-margin-mobile md:px-margin-desktop">
         <div class="max-w-container-max mx-auto w-full relative flex items-center">
-            <a href="index.html" aria-label="Arran de terra — Inici"
+            <a id="menu-brand" href="index.html" aria-label="Arran de terra — Inici"
                 class="block font-display uppercase leading-tight tracking-wide text-[clamp(1.1rem,1rem+0.4vw,1.6rem)] md:whitespace-nowrap"
                 style="max-width: calc(100% - 3.5rem)">
                 <span class="text-primary-orange">Arran de terra.</span>
@@ -96,36 +96,36 @@
 
                 <!-- Floating icons around rings -->
                 <div class="hero-float-icons">
-<div class="hero-float-icon" style="--hf-delay: 1.0s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">grass</span>
-    </div>
-</div>
-<div class="hero-float-icon" style="--hf-delay: 1.2s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">nutrition</span>
-    </div>
-</div>
-<div class="hero-float-icon" style="--hf-delay: 1.4s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">set_meal</span>
-    </div>
-</div>
-<div class="hero-float-icon" style="--hf-delay: 1.6s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">compost</span>
-    </div>
-</div>
-<div class="hero-float-icon" style="--hf-delay: 1.8s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">local_florist</span>
-    </div>
-</div>
-<div class="hero-float-icon" style="--hf-delay: 2.0s;">
-    <div class="hero-float-icon__inner glass-float">
-        <span class="material-symbols-outlined text-gold text-2xl">egg</span>
-    </div>
-</div>
+                    <div class="hero-float-icon" style="--hf-delay: 1.0s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">grass</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 1.2s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">nutrition</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 1.4s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">set_meal</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 1.6s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">compost</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 1.8s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">local_florist</span>
+                        </div>
+                    </div>
+                    <div class="hero-float-icon" style="--hf-delay: 2.0s;">
+                        <div class="hero-float-icon__inner glass-float">
+                            <span class="material-symbols-outlined text-gold text-2xl">egg</span>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -300,40 +300,46 @@
 
     <!-- CTA Stage (slides over the infografies section, replicating hero->section) -->
     <div id="cta-stage">
-        <div class="sticky-wrapper bg-dark-brown">
-            <section class="stacked stacked-4 relative overflow-hidden w-full">
+        <div class="sticky-wrapper bg-[#f5e6bd]">
+            <section class="stacked stacked-4 relative w-full [clip-path:inset(0_0_-100vh_0)]">
                 <!-- Floating Decorative Elements -->
-                <div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
-                    <!-- Node 1 -->
-                    <!-- Ondas decorativas -->
-                    <img id="cta-onda-left" class="hero-onda onda-left" src="./img/onades.png" alt="" style="opacity:0.8">
-                    <img id="cta-onda-right" class="hero-onda onda-right" src="./img/onades.png" alt="" style="opacity:0.8;">
-                    <!-- Glow central -->
-                
-                </div>
-                <div class="stacked-page w-full flex flex-col justify-center py-28 px-margin-mobile md:px-margin-desktop">
-                    <div class="max-w-container-max mx-auto flex flex-col items-center text-center gap-6 relative z-10" data-animate data-children data-stagger="0.12">
-                        <h2 class="heading-text heading-text--light text-white max-w-3xl">
-                            Vols organitzar una presentació?
-                        </h2>
-                        <p class="body-text body-text--onbrown max-w-2xl">
-                            Omple el formulari de la pàgina de contacte i ens posarem en contacte amb tu per organitzar una presentació.
-                        </p>
-                        <a href="contacte.html"
-                            class="mt-2 inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-8 py-3 label-text transition-colors shadow-md">
-                            Vés al formulari
-                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
-                        </a>
+                <div aria-hidden="true" class="absolute inset-0 pointer-events-none ">
+                <div class="hero-rings"></div>
+
+
+            </div>
+
+
+            <div class="stacked-page w-full flex flex-col justify-center py-28 px-margin-mobile md:px-margin-desktop">
+                    <div class="max-w-container-max mx-auto w-full relative z-10">
+                        <div class="w-full max-w-[840px]">
+                            <p class="label-text label-text--sm text-dark-brown/70 mb-4">3a edició · 2026</p>
+                            <h1
+                                class="heading-text mb-8 max-w-4xl drop-shadow-sm md:leading-tight text-balance text-left"
+                                style="text-wrap: balance">
+                                Vols organitzar una presentació?</h1>
+                            <p class="label-text mb-12 max-w-2xl">
+                                Omple el formulari de la pàgina de contacte i ens posarem en contacte amb tu per organitzar una presentació.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-start items-start label-text--sm">
+                                    <a href="contacte.html"
+                                        class="mt-2 inline-flex bg-primary-orange hover:bg-terracotta text-white rounded-full px-8 py-3 label-text transition-colors shadow-md">
+                                        Vés al formulari
+                                        <span class="material-symbols-outlined ml-2">arrow_forward</span>
+                                    </a>
+                        </div>
                     </div>
                 </div>
+            </div>
             </section>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="w-full relative overflow-hidden bg-[#f5e6bd] border-t border-dark-brown/10">
-<img src="./img/onades.png" alt="" class="absolute -bottom-20 -right-[280px] w-[1400px] opacity-[0.4] pointer-events-none rotate-[240deg]" aria-hidden="true">       
-        <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-14 md:py-20 relative z-10">
+
+    <footer class="w-full relative overflow-hidden bg-[#f5e6bd]">
+    <div class="w-full px-margin-mobile md:px-margin-desktop py-14 md:py-20 relative z-10">
+        <div class="max-w-container-max mx-auto w-full">
             <!-- Títol editorial amb presència -->
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-4 border-b border-dark-brown/10" data-animate>
                 <div class="space-y-4 max-w-3xl">
@@ -478,6 +484,15 @@
             pointer-events: auto;
         }
 
+        #menu-brand {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #menu-controls.header-hidden-by-menu #menu-brand {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
         @media (max-width: 767.98px) {
             #fullscreen-menu .menu-item {
                 justify-content: flex-start;
@@ -501,6 +516,7 @@
 
             const items = Array.from(menu.querySelectorAll('.menu-item'));
             const footer = menu.querySelector('.menu-footer');
+            const menuControls = document.getElementById('menu-controls');
             let open = false;
 
             function animateIn() {
@@ -528,6 +544,7 @@
                 menu.setAttribute('aria-hidden', String(!open));
                 toggle.classList.toggle('is-active', open);
                 toggle.setAttribute('aria-expanded', String(open));
+                if (menuControls) menuControls.classList.toggle('header-hidden-by-menu', open);
                 lockScroll(open);
                 if (open) animateIn(); else animateOut();
             }
@@ -539,6 +556,57 @@
     </script>
     <script src="./js/header.js"></script>
     <script src="./js/animations.js"></script>
+    <script>
+        (() => {
+            const header = document.getElementById('menu-controls');
+            const ctaStage = document.getElementById('cta-stage');
+            if (!header || !ctaStage) return;
+
+            let headerOffset = 0;
+            let rafId = null;
+
+            function updateHeaderOffset() {
+                const wasAnchored = header.classList.contains('header-anchored');
+                header.classList.remove('header-anchored');
+                header.style.removeProperty('--header-anchor-top');
+                headerOffset = parseFloat(getComputedStyle(header).top) || 0;
+                if (wasAnchored) header.classList.add('header-anchored');
+            }
+
+            function update() {
+                if (rafId) return;
+                rafId = requestAnimationFrame(() => {
+                    rafId = null;
+
+                    if (window.innerWidth < 768) {
+                        header.classList.remove('header-anchored');
+                        header.style.removeProperty('--header-anchor-top');
+                        return;
+                    }
+
+                    const ctaTop = ctaStage.offsetTop;
+                    const switchPoint = ctaTop + window.innerHeight;
+                    const scrollY = window.scrollY;
+
+                    if (scrollY > switchPoint) {
+                        header.classList.add('header-anchored');
+                        header.style.setProperty('--header-anchor-top', `${switchPoint + headerOffset}px`);
+                    } else {
+                        header.classList.remove('header-anchored');
+                        header.style.removeProperty('--header-anchor-top');
+                    }
+                });
+            }
+
+            updateHeaderOffset();
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', () => {
+                updateHeaderOffset();
+                update();
+            });
+            update();
+        })();
+    </script>
 </body>
 
 </html>

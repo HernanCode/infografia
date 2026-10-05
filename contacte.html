@@ -29,23 +29,28 @@
     <!-- Organic Gradient Background -->
     <div class="fixed inset-0 z-[-2] bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
     <div class="fixed inset-0 z-[-1] topo-pattern opacity-80"></div>
-    <!-- Logo i botó de menú, sempre visibles (transparents, sense barra) -->
+    <!-- Nom del projecte i botó de menú, sempre visibles (transparents, sense barra) -->
     <div id="menu-controls"
-        class="fixed top-10 md:top-12 left-0 right-0 z-50 mx-auto w-max flex items-center gap-4">
-        <a href="index.html" aria-label="Arran de terra — Inici" class="flex items-center">
-            <img src="./img/logo.svg" alt="Arran de terra" class="h-11 md:h-14 w-auto drop-shadow-sm">
-        </a>
-        <button id="menu-toggle" aria-label="Obrir el menú" aria-expanded="false" aria-controls="fullscreen-menu"
-            class="burger-btn relative w-11 h-11 shrink-0 rounded-full bg-white/60 hover:bg-white/80 active:scale-95 transition-all p-2.5 flex flex-col justify-center items-center gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange">
-            <span class="line-top block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
-            <span class="line-mid block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-200"></span>
-            <span class="line-bot block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
-        </button>
+        class="relative w-full z-50 px-margin-mobile md:px-margin-desktop pt-10 md:pt-12">
+        <div class="max-w-container-max mx-auto w-full relative flex items-center">
+            <a id="menu-brand" href="index.html" aria-label="Arran de terra — Inici"
+                class="block font-display uppercase leading-tight tracking-wide text-[clamp(1.1rem,1rem+0.4vw,1.6rem)] md:whitespace-nowrap"
+                style="max-width: calc(100% - 3.5rem)">
+                <span class="text-primary-orange">Arran de terra.</span>
+                <span class="text-muted">El sistema alimentari català des de la sobirania alimentària</span>
+            </a>
+            <button id="menu-toggle" aria-label="Obrir el menú" aria-expanded="false" aria-controls="fullscreen-menu"
+                class="burger-btn absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 shrink-0 rounded-full bg-white/60 hover:bg-white/80 active:scale-95 transition-all p-2.5 flex flex-col justify-center items-center gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange">
+                <span class="line-top block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+                <span class="line-mid block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-200"></span>
+                <span class="line-bot block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+            </button>
+        </div>
     </div>
 
     <!-- Menú a pantalla completa -->
     <div id="fullscreen-menu" aria-hidden="true"
-        class="menu-hidden fixed inset-0 z-40 flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
+        class="menu-hidden fixed inset-0 z-[60] flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
         <!-- Fons càlid igual que la resta de la pàgina -->
         <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
         <div class="absolute inset-0 -z-10 pointer-events-none topo-pattern opacity-80"></div>
@@ -104,27 +109,28 @@
 
     <main class="mx-auto relative min-h-screen">
         <section
-            class="flex flex-col items-center justify-center text-center relative px-margin-mobile md:px-margin-desktop pt-32 pb-16">
-            <nav class="flex items-center gap-2 md:mb-8 mb-4 text-sm" data-animate>
-                <a href="index.html" class="flex items-center gap-2 text-dark-brown hover:text-primary-orange transition-colors">
-                    <span class="material-symbols-outlined text-base">folder</span>
-                    <span class="label-text text-xs">Inici</span>
-                </a>
-                <span class="material-symbols-outlined text-dark-brown/50 text-sm">chevron_right</span>
-                <span class="label-text text-xs text-primary-orange">Contacte</span>
-            </nav>
-            <div class="glass-panel px-4 py-2 rounded-full mb-6 inline-flex items-center gap-2 shadow-sm" data-animate>
-                <span class="label-text text-xs text-dark-brown">Contacte</span>
-            </div>
-            <h1 class="heading-text heading-text--light mb-5 text-center" data-animate>
-                        <span class="block">Vols organitzar una</span>
-                        <span class="text-primary-orange">presentació?</span>
-            </h1>
-            <p class="body-text max-w-2xl mx-auto mb-5" data-animate>
-                Portem els Indicadors a la teva entitat, universitat o equip. Deixa'ns les teves dades i et responem en breu.
-            </p>
+            class="flex flex-col items-start justify-start text-left relative px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-16">
+            <div class="max-w-container-max mx-auto w-full">
+                <nav class="flex items-center gap-2 md:mb-8 mb-4 text-sm" data-animate>
+                    <a href="index.html" class="flex items-center gap-2 text-dark-brown hover:text-primary-orange transition-colors">
+                        <span class="material-symbols-outlined text-base">folder</span>
+                        <span class="label-text text-xs">Inici</span>
+                    </a>
+                    <span class="material-symbols-outlined text-dark-brown/50 text-sm">chevron_right</span>
+                    <span class="label-text text-xs text-primary-orange">Contacte</span>
+                </nav>
+                <div class="glass-panel px-4 py-2 rounded-full mb-6 inline-flex items-center gap-2 shadow-sm" data-animate>
+                    <span class="label-text text-xs text-dark-brown">Contacte</span>
+                </div>
+                <h1 class="heading-text heading-text--light mb-5 text-left" data-animate>
+                    <span class="block">Vols organitzar una</span>
+                    <span class="text-primary-orange">presentació?</span>
+                </h1>
+                <p class="body-text max-w-2xl mb-5" data-animate>
+                    Portem els Indicadors a la teva entitat, universitat o equip. Deixa'ns les teves dades i et responem en breu.
+                </p>
 
-            <form class="w-full max-w-4xl mx-auto text-left space-y-6 bg-white/40 backdrop-blur-md rounded-3xl p-8 md:p-14 border border-white/50 shadow-sm" data-animate>
+                <form class="w-full max-w-4xl text-left space-y-6 bg-white/40 backdrop-blur-md rounded-3xl p-8 md:p-14 border border-white/50 shadow-sm" data-animate>
                 <div class="space-y-1">
                     <label for="nom" class="block label-text text-dark-brown">Nom</label>
                     <input id="nom" name="nom" type="text" required placeholder="El teu nom"
@@ -151,6 +157,7 @@
                     Enviar
                 </button>
             </form>
+            </div>
         </section>
     </main>
 
@@ -299,6 +306,15 @@
             pointer-events: auto;
         }
 
+        #menu-brand {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #menu-controls.header-hidden-by-menu #menu-brand {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
         @media (max-width: 767.98px) {
             #fullscreen-menu .menu-item {
                 justify-content: flex-start;
@@ -322,6 +338,7 @@
 
             const items = Array.from(menu.querySelectorAll('.menu-item'));
             const footer = menu.querySelector('.menu-footer');
+            const menuControls = document.getElementById('menu-controls');
             let open = false;
 
             function animateIn() {
@@ -349,6 +366,7 @@
                 menu.setAttribute('aria-hidden', String(!open));
                 toggle.classList.toggle('is-active', open);
                 toggle.setAttribute('aria-expanded', String(open));
+                if (menuControls) menuControls.classList.toggle('header-hidden-by-menu', open);
                 lockScroll(open);
                 if (open) animateIn(); else animateOut();
             }

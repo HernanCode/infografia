@@ -105,7 +105,6 @@ section.stacked {
     position: sticky ;
     top: 0;
     height: 100vh;
-    overflow: hidden;
 }
 
 #stacked-stage {
@@ -118,7 +117,6 @@ section.stacked {
     position: sticky;
     top: 0;
     height: 100vh;
-    overflow: hidden;
 }
 
 .stacked-track {
@@ -186,7 +184,6 @@ section.stacked {
         height: auto;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
     }
     .stacked-track {
         position: relative;
@@ -295,7 +292,6 @@ section.stacked {
     #cta-stage .sticky-wrapper {
         position: relative;
         height: auto;
-        overflow: hidden;
     }
     #cta-stage section.stacked {
         position: relative;
@@ -336,7 +332,8 @@ section.stacked {
         position: sticky;
         top: 0;
         height: 100vh;
-        overflow: hidden;
+        overflow: visible;
+        clip-path: inset(0 0 -50vh 0);
     }
 
     #cta-stage section.stacked {
@@ -345,6 +342,7 @@ section.stacked {
         left: 0;
         right: 0;
         height: 100vh;
+        overflow: visible;
     }
 
     #cta-stage .stacked-page {
@@ -353,6 +351,7 @@ section.stacked {
         width: 100%;
         height: 100%;
         will-change: transform, opacity;
+        overflow: visible;
     }
 }
 
@@ -576,5 +575,17 @@ animation:
     @keyframes hero-float-bob {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-5px); }
+    }
+}
+
+/* ============================================
+   HEADER ANCLAT AL CTA (només index1.html)
+   El header deixa de ser fixed quan el CTA
+   deixa de ser sticky i puja amb ell.
+   ============================================ */
+@media (min-width: 768px) {
+    #menu-controls.header-anchored {
+        position: absolute !important;
+        top: var(--header-anchor-top, 0) !important;
     }
 }

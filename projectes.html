@@ -31,23 +31,28 @@
 
 <body class="bg-black-text text-white font-body relative min-h-screen">
     <div class="fixed inset-0 z-[-1] topo-pattern opacity-60"></div>
-    <!-- Logo i botó de menú, sempre visibles (transparents, sense barra) -->
+    <!-- Nom del projecte i botó de menú, sempre visibles (transparents, sense barra) -->
     <div id="menu-controls"
-        class="fixed top-10 md:top-12 left-0 right-0 z-50 mx-auto w-max flex items-center gap-4">
-        <a href="index.html" aria-label="Arran de terra — Inici" class="flex items-center">
-            <img src="./img/logo.svg" alt="Arran de terra" class="h-11 md:h-14 w-auto drop-shadow-sm">
-        </a>
-        <button id="menu-toggle" aria-label="Obrir el menú" aria-expanded="false" aria-controls="fullscreen-menu"
-            class="burger-btn relative w-11 h-11 shrink-0 rounded-full bg-white/60 hover:bg-white/80 active:scale-95 transition-all p-2.5 flex flex-col justify-center items-center gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange">
-            <span class="line-top block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
-            <span class="line-mid block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-200"></span>
-            <span class="line-bot block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
-        </button>
+        class="relative w-full z-50 px-margin-mobile md:px-margin-desktop pt-10 md:pt-12">
+        <div class="max-w-container-max mx-auto w-full relative flex items-center">
+            <a id="menu-brand" href="index.html" aria-label="Arran de terra — Inici"
+                class="block font-display uppercase leading-tight tracking-wide text-[clamp(1.1rem,1rem+0.4vw,1.6rem)] md:whitespace-nowrap"
+                style="max-width: calc(100% - 3.5rem)">
+                <span class="text-primary-orange">Arran de terra.</span>
+                <span class="text-muted">El sistema alimentari català des de la sobirania alimentària</span>
+            </a>
+            <button id="menu-toggle" aria-label="Obrir el menú" aria-expanded="false" aria-controls="fullscreen-menu"
+                class="burger-btn absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 shrink-0 rounded-full bg-white/60 hover:bg-white/80 active:scale-95 transition-all p-2.5 flex flex-col justify-center items-center gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange">
+                <span class="line-top block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+                <span class="line-mid block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-200"></span>
+                <span class="line-bot block w-5 h-[2px] bg-black-text rounded-full origin-center transition-all duration-300"></span>
+            </button>
+        </div>
     </div>
 
     <!-- Menú a pantalla completa -->
     <div id="fullscreen-menu" aria-hidden="true"
-        class="menu-hidden fixed inset-0 z-40 flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
+        class="menu-hidden fixed inset-0 z-[60] flex flex-col overflow-hidden px-margin-mobile md:px-margin-desktop">
         <!-- Fons càlid igual que la resta de la pàgina -->
         <div class="absolute inset-0 -z-10 pointer-events-none bg-gradient-to-br from-cream via-[#FDE8D0] to-[#F5CBA7]"></div>
         <div class="absolute inset-0 -z-10 pointer-events-none topo-pattern opacity-80"></div>
@@ -85,7 +90,7 @@
         </div>
 
         <!-- Peu del menú -->
-        <div class="menu-footer relative z-10 max-w-container-max mx-auto w-full pt-8 border-t border-dark-brown/10 mt-6 pb-6">
+        <div class="menu-footer relative z-10 max-w-container-max mx-auto w-full pt-8 border-t border-dark-brown/10 mt-10 pb-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                 <div class="flex md:justify-center">
                     <a href="contacte.html"
@@ -106,46 +111,48 @@
 
     <main class="mx-auto relative pb-16">
         <section
-            class="flex flex-col items-center justify-start text-center relative px-margin-mobile md:px-margin-desktop pt-40 bg-black-text">
-            <div
-                class="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-2 mb-6" data-animate>
-                <span class="label-text text-xs text-white">Arxiu d'infografies</span>
+            class="flex flex-col items-start justify-start text-left relative px-margin-mobile md:px-margin-desktop pt-10 md:pt-12 pb-6 md:pb-8 bg-black-text">
+            <div class="max-w-container-max mx-auto w-full">
+                   
+
+                 <p class="label-text label-text--sm text-white/70 py-2 mb-6 mt-16">Arxiu d'infografies</p>
+                <h1 class="heading-text text-white mb-6 max-w-4xl" data-animate>
+                    Totes les infografies<br><span class="bg-gradient-to-r bg-clip-text text-transparent from-primary-orange to-terracotta">dels Indicadors</span></h1>
+                <p class="body-text text-white/60 max-w-3xl mb-6" data-animate>
+                    Aquí trobaràs totes les infografies del projecte: dades sobre el sistema alimentari català des de la perspectiva de la sobirania alimentària.
+                </p>
             </div>
-            <h1 class="heading-text text-white mb-6 max-w-4xl mx-auto" data-animate>
-                Totes les infografies<br><span class="bg-gradient-to-r bg-clip-text text-transparent from-primary-orange to-terracotta">dels Indicadors</span></h1>
-            <p class="body-text text-white/60 max-w-3xl mx-auto mb-12" data-animate>
-                Aquí trobaràs totes les infografies del projecte: dades sobre el sistema alimentari català des de la perspectiva de la sobirania alimentària.
-            </p>
         </section>
 
         <!-- Search + Filters -->
-        <div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div
-                class="rounded-3xl p-4 md:p-6 mb-10 border border-white/10 bg-white/5 backdrop-blur-md" data-animate>
-                <div class="flex flex-col md:flex-row gap-4 md:items-center justify-between">
-                    <div class="relative w-full md:max-w-md">
-                        <span
-                            class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-white/60 text-xl pointer-events-none">search</span>
-                        <input id="search-input" type="text" placeholder="Cerca un projecte..."
-                            class="w-full bg-black-text text-white placeholder-white/40 border border-white/15 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/30 outline-none rounded-full pl-14 pr-5 py-4 text-base shadow-inner transition-all">
-                    </div>
-                    <div class="flex flex-wrap gap-2 justify-center md:justify-end" id="filter-chips">
-                        <button data-filter="cat1"
-                            class="filter-chip bg-primary-orange text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 1</button>
-                        <button data-filter="cat2"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 2</button>
-                        <button data-filter="cat3"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 3</button>
-                        <button data-filter="cat4"
-                            class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 4</button>
+        <div class="w-full px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto w-full">
+                <div
+                    class="rounded-3xl p-4 md:p-6 mb-10 border border-white/10 bg-white/5 backdrop-blur-md" data-animate>
+                    <div class="flex flex-col md:flex-row gap-4 md:items-center justify-between">
+                        <div class="relative w-full md:max-w-md">
+                            <span
+                                class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-white/60 text-xl pointer-events-none">search</span>
+                            <input id="search-input" type="text" placeholder="Cerca un projecte..."
+                                class="w-full bg-black-text text-white placeholder-white/40 border border-white/15 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/30 outline-none rounded-full pl-14 pr-5 py-4 text-base shadow-inner transition-all">
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-end" id="filter-chips">
+                            <button data-filter="cat1"
+                                class="filter-chip bg-primary-orange text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 1</button>
+                            <button data-filter="cat2"
+                                class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 2</button>
+                            <button data-filter="cat3"
+                                class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 3</button>
+                            <button data-filter="cat4"
+                                class="filter-chip bg-white/10 text-white/80 hover:bg-primary-orange hover:text-white rounded-full px-4 py-2 label-text text-xs transition-colors">Categoria 4</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <p id="result-count" class="caption-text text-white/50 text-left mb-6"></p>
+                <p id="result-count" class="caption-text text-white/50 text-left mb-6"></p>
 
-            <!-- Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-animate data-children data-stagger="0.1">
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-animate data-children data-stagger="0.1">
 <a href="infografia.html" class="project group block" data-tags="cat1 cat2">
                     <div
                         class="relative aspect-[16/10] rounded-3xl bg-dark-brown mb-4 overflow-hidden group-hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
@@ -227,7 +234,8 @@
                     <p class="body-text text-white/70">Sistemes de regadiu sostenible a alta muntanya.</p>
                 </a>
             </div>
-            <p id="empty-state" class="hidden text-center text-white/50 mt-16 body-text">No s'ha trobat cap projecte amb aquests criteris.</p>
+                <p id="empty-state" class="hidden text-center text-white/50 mt-16 body-text">No s'ha trobat cap projecte amb aquests criteris.</p>
+            </div>
         </div>
     </main>
 
@@ -376,6 +384,15 @@
             pointer-events: auto;
         }
 
+        #menu-brand {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #menu-controls.header-hidden-by-menu #menu-brand {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
         @media (max-width: 767.98px) {
             #fullscreen-menu .menu-item {
                 justify-content: flex-start;
@@ -399,6 +416,7 @@
 
             const items = Array.from(menu.querySelectorAll('.menu-item'));
             const footer = menu.querySelector('.menu-footer');
+            const menuControls = document.getElementById('menu-controls');
             let open = false;
 
             function animateIn() {
@@ -426,6 +444,7 @@
                 menu.setAttribute('aria-hidden', String(!open));
                 toggle.classList.toggle('is-active', open);
                 toggle.setAttribute('aria-expanded', String(open));
+                if (menuControls) menuControls.classList.toggle('header-hidden-by-menu', open);
                 lockScroll(open);
                 if (open) animateIn(); else animateOut();
             }
