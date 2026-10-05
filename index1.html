@@ -29,8 +29,9 @@
     <!-- Organic Gradient Background -->
     <div class="fixed inset-0 z-[-2]"></div>
     <!-- Nom del projecte i botó de menú, sempre visibles (transparents, sense barra) -->
+     <div id="menu-rail">
     <div id="menu-controls"
-        class="relative w-full pt-10 md:fixed md:top-12 md:left-0 md:right-0 z-50 px-margin-mobile md:px-margin-desktop">
+        class="sticky top-10 md:top-12 z-50 px-margin-mobile md:px-margin-desktop">
         <div class="max-w-container-max mx-auto w-full relative flex items-center">
             <a id="menu-brand" href="index.html" aria-label="Arran de terra — Inici"
                 class="block font-display uppercase leading-tight tracking-wide text-[clamp(1.1rem,1rem+0.4vw,1.6rem)] md:whitespace-nowrap"
@@ -46,6 +47,7 @@
         </button>
         </div>
     </div>
+     </div>
 
     <!-- Menú a pantalla completa -->
     <div id="fullscreen-menu" aria-hidden="true"
@@ -556,57 +558,32 @@
     </script>
     <script src="./js/header.js"></script>
     <script src="./js/animations.js"></script>
-    <script>
-        (() => {
-            const header = document.getElementById('menu-controls');
-            const ctaStage = document.getElementById('cta-stage');
-            if (!header || !ctaStage) return;
+<script>
+(() => {
+    const rail = document.getElementById('menu-rail');
+    const header = document.getElementById('menu-controls');
+    const ctaStage = document.getElementById('cta-stage');
+    if (!rail || !header || !ctaStage) return;
 
-            let headerOffset = 0;
-            let rafId = null;
+    function sizeRail() {
+        if (window.innerWidth < 768) {      // móvil: siempre visible
+            rail.style.bottom = '0';
+            rail.style.height = '';
+            return;
+        }
+        const top = parseFloat(getComputedStyle(header).top) || 0;
+        // el título se suelta justo donde antes pasaba a "anchored"
+        rail.style.bottom = 'auto';
+        rail.style.height =
+            (ctaStage.offsetTop + window.innerHeight + top + header.offsetHeight) + 'px';
+    }
 
-            function updateHeaderOffset() {
-                const wasAnchored = header.classList.contains('header-anchored');
-                header.classList.remove('header-anchored');
-                header.style.removeProperty('--header-anchor-top');
-                headerOffset = parseFloat(getComputedStyle(header).top) || 0;
-                if (wasAnchored) header.classList.add('header-anchored');
-            }
-
-            function update() {
-                if (rafId) return;
-                rafId = requestAnimationFrame(() => {
-                    rafId = null;
-
-                    if (window.innerWidth < 768) {
-                        header.classList.remove('header-anchored');
-                        header.style.removeProperty('--header-anchor-top');
-                        return;
-                    }
-
-                    const ctaTop = ctaStage.offsetTop;
-                    const switchPoint = ctaTop + window.innerHeight;
-                    const scrollY = window.scrollY;
-
-                    if (scrollY > switchPoint) {
-                        header.classList.add('header-anchored');
-                        header.style.setProperty('--header-anchor-top', `${switchPoint + headerOffset}px`);
-                    } else {
-                        header.classList.remove('header-anchored');
-                        header.style.removeProperty('--header-anchor-top');
-                    }
-                });
-            }
-
-            updateHeaderOffset();
-            window.addEventListener('scroll', update, { passive: true });
-            window.addEventListener('resize', () => {
-                updateHeaderOffset();
-                update();
-            });
-            update();
-        })();
-    </script>
+    sizeRail();
+    window.addEventListener('resize', sizeRail);
+    window.addEventListener('load', sizeRail);
+    new ResizeObserver(sizeRail).observe(document.body); // por si cambia el alto de la página
+})();
+</script>
 </body>
 
 </html>

@@ -28,7 +28,15 @@
             backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
+    
         
+        #menu-rail {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0; /* móvil: todo el alto de la página */
+    z-index: 50;
+    pointer-events: none;
+}
+#menu-controls { pointer-events: auto; }
 /* ============================================
    AROS DEL HERO + ICONES: GEOMETRIA COMPARTIDA
    Els dos contenidors fan servir exactament la mateixa
